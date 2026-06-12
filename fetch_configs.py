@@ -195,7 +195,6 @@ def generate_hybrid_html(configs, filename_display, start_index=1):
         
     plain_configs = "\n".join(metadata_lines + processed_configs)
     
-    # HTML-шаблон, который рендерит полноценный сайт прямо на этом же URL
     html_content = f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -413,16 +412,19 @@ def fetch_and_save():
         json.dump(manifest_data, mf, ensure_ascii=False, indent=2)
     print(f"Манифест сохранен in {MANIFEST_FILE}")
 
-    # Запись ссылок
+    # Запись официальных ссылок GitHub Pages вместо RAW ссылок
     github_repository = os.environ.get("GITHUB_REPOSITORY", "USER/REPO")
-    raw_url_base = f"https://raw.githubusercontent.com/{github_repository}/main"
-    
     try:
+        owner, repo = github_repository.split('/')
+        pages_url_base = f"https://{owner.lower()}.github.io/{repo}"
+        
         with open(BEST_LINKS_FILE, 'w', encoding='utf-8') as link_file:
-            link_file.write("# Прямые ссылки на лучшие конфигурации\n\n")
-            link_file.write("## RAW GitHub ссылки:\n")
+            link_file.write("# Ссылки GitHub Pages на лучшие конфигурации\n\n")
+            link_file.write("## GitHub Pages ссылки:\n")
             for path in best_file_paths:
-                link_file.write(f"{raw_url_base}/{path}\n")
+                link_file.write(f"{pages_url_base}/{path}\n")
+                
+        print(f"Ссылки GitHub Pages записаны в {BEST_LINKS_FILE}")
     except Exception as e:
         print(f"Ошибка записи ссылок: {e}")
 
