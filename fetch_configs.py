@@ -9,11 +9,12 @@ import urllib.request
 import urllib.parse
 import base64
 import time
+import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.error import URLError, HTTPError
 
 # ==================== НАСТРОЙКИ БРЕНДА ====================
-# Укажите ссылку на ваш Telegram-канал здесь:
+# ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШ ТЕЛЕГРАМ-КАНАЛ:
 TG_CHANNEL_LINK = "https://t.me/your_telegram_channel"
 # ==========================================================
 
@@ -22,8 +23,9 @@ LINKS_FILE = "links.txt"
 OUTPUT_DIR = "configs"
 BEST_LINKS_FILE = "best_files_links.txt"
 MAX_CONFIGS_PER_FILE = 200
-TCP_TIMEOUT = 2.5  # Максимальное время ожидания ответа от сервера (в секундах)
-MAX_THREADS = 50   # Количество параллельных потоков для быстрой проверки
+TCP_TIMEOUT = 1.5  # Уменьшили таймаут для ускорения проверки огромных списков
+MAX_THREADS = 150   # Увеличили количество потоков до 150 для мгновенного пинга
+LIMIT_TEST_CONFIGS = 1500 # Максимальное количество конфигов для теста (чтобы не зависать на 30 000+ адресах)
 
 def decode_base64(data):
     """Безопасно декодирует строку из Base64."""
@@ -39,7 +41,7 @@ def decode_base64(data):
         return data
 
 def encode_base64(text):
-    """Кодирует строку в Base64 без лишних символов переноса строки."""
+    """Кодирует строку в Base64."""
     text_bytes = text.encode('utf-8', errors='ignore')
     encoded_bytes = base64.b64encode(text_bytes)
     return encoded_bytes.decode('utf-8')
@@ -64,10 +66,7 @@ def sanitize_filename(name):
     return name[:50]
 
 def rename_config(config, new_name):
-    """
-    Переименовывает конфигурацию (меняет ее тег).
-    Работает с vmess:// и другими протоколами (в конце после #).
-    """
+    """Переименовывает имя соединения в конфигурации."""
     try:
         if config.lower().startswith('vmess://'):
             schemeless = config[8:]
@@ -145,20 +144,30 @@ def test_tcp_connection(config):
         return None
 
 def check_all_configs_parallel(all_configs):
-    """Выполняет многопоточную проверку связи по TCP."""
-    print(f"Начинаем проверку {len(all_configs)} уникальных конфигураций в {MAX_THREADS} потоков...")
+    """Выполняет ультрабыструю многопоточную проверку связи по TCP."""
+    total_count = len(all_configs)
+    
+    # Защита от зависаний при 30 000+ конфигах:
+    # Мы берем случайную выборку из 1500 штук для поиска лучших рабочих
+    if total_count > LIMIT_TEST_CONFIGS:
+        print(f"База слишком большая ({total_count} шт). Выбираем случайные {LIMIT_TEST_CONFIGS} для быстрого TCP-теста...")
+        configs_to_test = random.sample(all_configs, LIMIT_TEST_CONFIGS)
+    else:
+        configs_to_test = all_configs
+
+    print(f"Начинаем проверку {len(configs_to_test)} конфигураций в {MAX_THREADS} потоков...")
     valid_configs = []
     
     with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
-        futures = {executor.submit(test_tcp_connection, cfg): cfg for cfg in all_configs if cfg}
+        futures = {executor.submit(test_tcp_connection, cfg): cfg for cfg in configs_to_test if cfg}
         completed_count = 0
         for future in as_completed(futures):
             result = future.result()
             if result:
                 valid_configs.append(result)
             completed_count += 1
-            if completed_count % 50 == 0 or completed_count == len(all_configs):
-                print(f"Проверено: {completed_count}/{len(all_configs)}...")
+            if completed_count % 150 == 0 or completed_count == len(configs_to_test):
+                print(f"Проверено: {completed_count}/{len(configs_to_test)}...")
                 
     valid_configs.sort(key=lambda x: x[1])
     return [item[0] for item in valid_configs]
@@ -225,6 +234,7 @@ def fetch_and_save():
             
         all_gathered_configs.extend(configs)
 
+        # Сохраняем все сырые файлы частями по 200 штук
         part = 1
         for i in range(0, total_configs, MAX_CONFIGS_PER_FILE):
             chunk = configs[i:i + MAX_CONFIGS_PER_FILE]
@@ -242,7 +252,7 @@ def fetch_and_save():
     if not unique_gathered_configs:
         return
 
-    # 2. Проверка по TCP
+    # 2. Быстрая проверка лучших по TCP
     best_sorted_configs = check_all_configs_parallel(unique_gathered_configs)
 
     if not best_sorted_configs:
@@ -283,4 +293,4 @@ def fetch_and_save():
 
 if __name__ == "__main__":
     fetch_and_save()
-    print("\nУспешно!")
+    print("\nУспешно завершено!")
