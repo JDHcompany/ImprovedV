@@ -144,7 +144,11 @@
         }
 
         const repoUrl = `https://github.com/${username}/${repoName}`;
-        const rawBaseUrl = `https://raw.githubusercontent.com/${username}/${repoName}/main`;
+        
+        // Автоматически строим URL-адрес GitHub Pages на основе текущего местоположения.
+        // Это предотвратит проблему открытия сырого raw-текста в браузере!
+        const loc = window.location;
+        const pagesBaseUrl = loc.protocol + '//' + loc.host + loc.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
 
         document.getElementById('github-link').href = repoUrl;
 
@@ -269,9 +273,9 @@
             renderAllFiles(query);
         }
 
-        // Копирует прямую ссылку (для VPN клиента)
+        // Копирует прямую ссылку (для VPN клиента / веб-браузера на основе GitHub Pages)
         function copyRawLink(filePath) {
-            const fullUrl = `${rawBaseUrl}/${filePath}`;
+            const fullUrl = `${pagesBaseUrl}/${filePath}`;
             
             const el = document.createElement('textarea');
             el.value = fullUrl;
@@ -280,12 +284,12 @@
             document.execCommand('copy');
             document.body.removeChild(el);
 
-            showToast("Ссылка скопирована!", "Используйте её в любом прокси-клиенте.");
+            showToast("Ссылка скопирована!", "Используйте её в браузере или прокси-клиенте.");
         }
 
         // Скачивает HTML-файл напрямую без открытия браузером кода
         function downloadFile(filePath, downloadName) {
-            const url = `${rawBaseUrl}/${filePath}`;
+            const url = `${pagesBaseUrl}/${filePath}`;
             
             showToast("Скачивание...", "Файл подготавливается.");
             
