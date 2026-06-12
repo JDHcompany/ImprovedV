@@ -2,8 +2,12 @@ name: Update Configs
 
 on:
   schedule:
-    - cron: '0 * * * *' # Запускать в начале каждого часа
-  workflow_dispatch:   # Позволяет запускать вручную
+    - cron: '0 * * * *' # Запуск раз в час
+  workflow_dispatch:   # Ручной запуск
+
+# ДОБАВЛЯЕМ ЯВНЫЕ ПРАВА НА ЗАПИСЬ ДЛЯ ОБХОДА ОШИБКИ 403
+permissions:
+  contents: write
 
 jobs:
   run-script:
@@ -28,7 +32,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Добавляем папки с обновленными прокси-файлами
+        # Добавляем папки с обновленными файлами
         git add configs/ best_files_links.txt
         
         if git diff --cached --quiet; then
