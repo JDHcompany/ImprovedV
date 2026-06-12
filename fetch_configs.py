@@ -174,7 +174,7 @@ def check_all_configs_parallel(all_configs):
 def generate_file_content(configs, start_index=1):
     """Создает содержимое файла со строгими метаданными профиля подписки."""
     header_lines = [
-        "# profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot",
+        "# profile-title: 🍟improvedVPN",
         "# profile-update-interval: 1",
         "# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800",
         "# support-url: https://t.me/freevpnconf_bot",
