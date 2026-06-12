@@ -105,7 +105,7 @@
         </main>
     </div>
 
-    <!-- Всплывающий тост для уведомлений -->
+    <!-- Тост -->
     <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
         <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
             <i data-lucide="check" class="w-5 h-5"></i>
@@ -131,7 +131,6 @@
     </footer>
 
     <script>
-        // Переменные путей
         const pathParts = window.location.pathname.split('/').filter(p => p);
         const host = window.location.host;
         const isGitHubPages = host.includes('github.io');
@@ -149,10 +148,8 @@
 
         document.getElementById('github-link').href = repoUrl;
 
-        // Хранилище загруженного манифеста
         let manifestData = null;
 
-        // Загрузка манифеста при старте
         fetch('configs/manifest.json')
             .then(res => {
                 if (!res.ok) throw new Error("Манифест отсутствует");
@@ -167,19 +164,15 @@
                 document.getElementById('update-time').innerText = "Ошибка загрузки данных";
             });
 
-        // Основной рендер интерфейса
         function renderPage() {
             if (!manifestData) return;
 
-            // Время обновления
             document.getElementById('update-time').innerText = `Обновлено: ${manifestData.last_updated}`;
 
-            // Ссылка на ТГ
             if (manifestData.telegram) {
                 document.getElementById('tg-btn').href = manifestData.telegram;
             }
 
-            // Рендер лучших файлов
             const bestContainer = document.getElementById('best-container');
             bestContainer.innerHTML = '';
             if (manifestData.best_files && manifestData.best_files.length > 0) {
@@ -189,12 +182,10 @@
                 });
             }
 
-            // Рендер всех файлов из подписок
             renderAllFiles();
             lucide.createIcons();
         }
 
-        // Создание карточки для лучших файлов
         function createBestCard(file) {
             const card = document.createElement('div');
             card.className = "card-blur p-6 rounded-3xl transition duration-300 hover:border-amber-500/30 flex flex-col justify-between";
@@ -213,7 +204,7 @@
                     <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-amber-500 hover:text-black text-gray-200 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm">
                         <i data-lucide="copy" class="w-4 h-4"></i> Копировать
                     </button>
-                    <button onclick="downloadFile('${file.filepath}', 'best_configs.txt')" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm border border-gray-800">
+                    <button onclick="downloadFile('${file.filepath}', 'best_configs.html')" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm border border-gray-800">
                         <i data-lucide="download" class="w-4 h-4"></i> Скачать
                     </button>
                 </div>
@@ -221,7 +212,6 @@
             return card;
         }
 
-        // Рендер списка вообще всех подписок
         function renderAllFiles(filterText = '') {
             const container = document.getElementById('all-files-container');
             container.innerHTML = '';
@@ -256,7 +246,7 @@
                             <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-1.5 bg-gray-900 hover:bg-amber-500 hover:text-black text-gray-300 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs">
                                 <i data-lucide="copy" class="w-3.5 h-3.5"></i> Ссылка
                             </button>
-                            <button onclick="downloadFile('${file.filepath}', 'improved-potato-part${file.part}.txt')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
+                            <button onclick="downloadFile('${file.filepath}', 'improved-potato-part${file.part}.html')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Скачать
                             </button>
                         </div>
@@ -274,13 +264,12 @@
             lucide.createIcons();
         }
 
-        // Фильтрация при вводе в поиск
         function filterFiles() {
             const query = document.getElementById('search-input').value;
             renderAllFiles(query);
         }
 
-        // Копирование в буфер обмена
+        // Копирует прямую ссылку (для VPN клиента)
         function copyRawLink(filePath) {
             const fullUrl = `${rawBaseUrl}/${filePath}`;
             
@@ -291,10 +280,10 @@
             document.execCommand('copy');
             document.body.removeChild(el);
 
-            showToast("Ссылка копирована!", "Используйте её в любом прокси-клиенте.");
+            showToast("Ссылка скопирована!", "Используйте её в любом прокси-клиенте.");
         }
 
-        // Принудительное скачивание файла
+        // Скачивает HTML-файл напрямую без открытия браузером кода
         function downloadFile(filePath, downloadName) {
             const url = `${rawBaseUrl}/${filePath}`;
             
@@ -325,7 +314,6 @@
                 });
         }
 
-        // Вывод тоста
         function showToast(title, desc) {
             document.getElementById('toast-title').innerText = title;
             document.getElementById('toast-desc').innerText = desc;
