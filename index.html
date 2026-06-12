@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍟 ImprovedVPN — Лучшие прокси-конфигурации</title>
-    <!-- Подключаем Tailwind CSS -->
+    <title>🍟 ImprovedVPN — Панель конфигураций</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Подключаем иконки Lucide -->
+    <!-- Иконки Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -29,7 +29,7 @@
 </head>
 <body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
 
-    <!-- Декоративный фон -->
+    <!-- Декоративный анимированный фон -->
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
     <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -37,7 +37,7 @@
     <div class="max-w-5xl w-full mx-auto px-4 py-12 z-10">
         
         <!-- Шапка -->
-        <header class="text-center mb-16 relative">
+        <header class="text-center mb-12 relative">
             <div class="inline-flex items-center justify-center p-3 bg-amber-500/10 rounded-3xl mb-6 border border-amber-500/20 glow-effect">
                 <span class="text-5xl">🍟</span>
             </div>
@@ -45,8 +45,9 @@
                 ImprovedVPN
             </h1>
             <p class="mt-4 text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
-                Автоматически обновляемые и проверенные на скорость TCP прокси-конфигурации (VLESS, VMess, Trojan, SS).
+                Все импортированные конфигурации в одном месте. Проверены, отсортированы и готовы к использованию.
             </p>
+            
             <div class="mt-6 flex flex-wrap justify-center gap-4">
                 <a id="tg-btn" href="#" target="_blank" class="glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-semibold px-6 py-3 rounded-2xl transition duration-300 transform hover:-translate-y-0.5">
                     <i data-lucide="send" class="w-5 h-5"></i>
@@ -54,114 +55,83 @@
                 </a>
                 <div class="inline-flex items-center gap-2 bg-gray-900/80 px-5 py-3 rounded-2xl text-gray-400 text-sm border border-gray-800">
                     <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
-                    <span>Обновление каждый час</span>
+                    <span id="update-time">Загрузка данных...</span>
                 </div>
             </div>
         </header>
 
-        <!-- Основная часть -->
+        <!-- Поиск и фильтрация -->
+        <section class="mb-8">
+            <div class="relative max-w-md mx-auto">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </div>
+                <input type="text" id="search-input" oninput="filterFiles()" placeholder="Поиск файлов по названию или домену..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900/60 border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 transition duration-200 card-blur">
+            </div>
+        </section>
+
+        <!-- Основная панель -->
         <main class="space-y-12">
             
-            <!-- Секция карточек -->
-            <div>
-                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                    <i data-lucide="zap" class="text-amber-500 w-6 h-6"></i>
-                    Лучшие прокси (Топ по пингу)
+            <!-- Секция 1: Топ лучшие (если есть) -->
+            <div id="best-section" class="hidden">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
+                    <i data-lucide="zap" class="text-amber-500 w-6 h-6 animate-pulse"></i>
+                    Рекомендуемые (Топ по пингу)
                 </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    
-                    <!-- Карточка 1 лучших -->
-                    <div class="card-blur p-6 rounded-3xl transition duration-300 hover:border-amber-500/30">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="p-3 bg-amber-500/10 rounded-2xl text-amber-500">
-                                <i data-lucide="star" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xs font-semibold px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full">Топ 1-200</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white">🍟 Improved-potato [Часть 1]</h3>
-                        <p class="text-gray-400 text-sm mt-2 mb-6">
-                            Самые быстрые и стабильные прокси-серверы, отобранные в результате ежечасного TCP-тестирования.
-                        </p>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button onclick="copyRawLink('configs/best_1.txt')" class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-amber-500 hover:text-black text-gray-200 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm">
-                                <i data-lucide="copy" class="w-4 h-4"></i> Копировать ссылку
-                            </button>
-                            <a id="dl-best1" href="#" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm border border-gray-800">
-                                <i data-lucide="download" class="w-4 h-4"></i> Скачать файл
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Карточка 2 лучших -->
-                    <div class="card-blur p-6 rounded-3xl transition duration-300 hover:border-amber-500/30">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="p-3 bg-amber-500/10 rounded-2xl text-amber-500">
-                                <i data-lucide="star-half" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xs font-semibold px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full">Топ 201-400</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white">🍟 Improved-potato [Часть 2]</h3>
-                        <p class="text-gray-400 text-sm mt-2 mb-6">
-                            Резервный пул надежных прокси-серверов с хорошим откликом и стабильным аптаймом.
-                        </p>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button onclick="copyRawLink('configs/best_2.txt')" class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-amber-500 hover:text-black text-gray-200 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm">
-                                <i data-lucide="copy" class="w-4 h-4"></i> Копировать ссылку
-                            </button>
-                            <a id="dl-best2" href="#" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm border border-gray-800">
-                                <i data-lucide="download" class="w-4 h-4"></i> Скачать файл
-                            </a>
-                        </div>
-                    </div>
-
+                <div id="best-container" class="grid md:grid-cols-2 gap-6">
+                    <!-- Заполняется динамически -->
                 </div>
             </div>
 
-            <!-- Инструкция -->
-            <div class="bg-gradient-to-r from-gray-900 via-amber-950/20 to-gray-900 p-6 rounded-3xl border border-amber-500/10 flex flex-col md:flex-row items-center gap-6 justify-between">
-                <div>
-                    <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
-                        <i data-lucide="info" class="w-5 h-5"></i> Как запустить импорт в VPN-клиент?
-                    </h3>
-                    <p class="text-gray-400 text-sm mt-1 max-w-2xl">
-                        Скопируйте ссылку на подписку кнопкой выше, откройте приложение (например, Nekobox, v2rayN, Shadowrocket), найдите раздел добавления подписок по URL и вставьте скопированную ссылку.
-                    </p>
+            <!-- Секция 2: Все файлы конфигураций -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
+                    <i data-lucide="file-text" class="text-amber-500 w-6 h-6"></i>
+                    Все доступные файлы подписок
+                </h2>
+                
+                <!-- Сообщение о пустом поиске -->
+                <div id="no-results" class="hidden text-center py-12 card-blur rounded-3xl border border-gray-800">
+                    <i data-lucide="folder-open" class="mx-auto w-12 h-12 text-gray-600 mb-3"></i>
+                    <p class="text-gray-400">Файлы с таким именем не найдены.</p>
                 </div>
-                <div class="text-gray-400 text-sm">
-                    Протоколы: <strong class="text-white">VLESS / VMess / Trojan / SS</strong>
+
+                <div id="all-files-container" class="grid md:grid-cols-2 gap-6">
+                    <!-- Заполняется динамически -->
                 </div>
             </div>
 
         </main>
     </div>
 
-    <!-- Тост-уведомление -->
+    <!-- Всплывающий тост для уведомлений -->
     <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
         <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
             <i data-lucide="check" class="w-5 h-5"></i>
         </div>
         <div>
-            <div class="font-bold text-sm">Ссылка скопирована!</div>
-            <div class="text-xs text-gray-400 mt-0.5">Вставьте её в свой VPN-клиент</div>
+            <div class="font-bold text-sm" id="toast-title">Успешно!</div>
+            <div class="text-xs text-gray-400 mt-0.5" id="toast-desc">Действие выполнено.</div>
         </div>
     </div>
 
-    <!-- Футер -->
+    <!-- Подвал -->
     <footer class="border-t border-gray-900 bg-gray-950/50 py-8 z-10 mt-16 text-center text-sm text-gray-500">
         <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 © 2026 🍟 <span class="font-semibold text-gray-300">ImprovedVPN</span>. Все права защищены.
             </div>
             <div>
-                <a id="github-link" href="#" target="_blank" class="hover:text-amber-500 transition duration-200">Исходный код на GitHub</a>
+                <a id="github-link" href="#" target="_blank" class="hover:text-amber-500 transition duration-200 flex items-center gap-1.5 justify-center">
+                    <i data-lucide="github" class="w-4 h-4"></i> Исходный код на GitHub
+                </a>
             </div>
         </div>
     </footer>
 
     <script>
-        lucide.createIcons();
-
-        // Автоматически определяем юзернейм и репозиторий из пути
+        // Переменные путей
         const pathParts = window.location.pathname.split('/').filter(p => p);
         const host = window.location.host;
         const isGitHubPages = host.includes('github.io');
@@ -178,27 +148,139 @@
         const rawBaseUrl = `https://raw.githubusercontent.com/${username}/${repoName}/main`;
 
         document.getElementById('github-link').href = repoUrl;
-        
-        // Динамически получаем ТГ-канал из питон-скрипта
-        fetch('fetch_configs.py')
-            .then(r => r.text())
-            .then(text => {
-                const match = text.match(/TG_CHANNEL_LINK\s*=\s*["']([^"']+)["']/);
-                if (match && match[1]) {
-                    document.getElementById('tg-btn').href = match[1];
-                }
+
+        // Хранилище загруженного манифеста
+        let manifestData = null;
+
+        // Загрузка манифеста при старте
+        fetch('configs/manifest.json')
+            .then(res => {
+                if (!res.ok) throw new Error("Манифест отсутствует");
+                return res.json();
             })
-            .catch(() => {
-                document.getElementById('tg-btn').href = "https://t.me/your_telegram_channel";
+            .then(data => {
+                manifestData = data;
+                renderPage();
+            })
+            .catch(err => {
+                console.error("Ошибка при получении манифеста:", err);
+                document.getElementById('update-time').innerText = "Ошибка загрузки данных";
             });
 
-        document.getElementById('dl-best1').href = `${rawBaseUrl}/configs/best_1.txt`;
-        document.getElementById('dl-best2').href = `${rawBaseUrl}/configs/best_2.txt`;
+        // Основной рендер интерфейса
+        function renderPage() {
+            if (!manifestData) return;
 
+            // Время обновления
+            document.getElementById('update-time').innerText = `Обновлено: ${manifestData.last_updated}`;
+
+            // Ссылка на ТГ
+            if (manifestData.telegram) {
+                document.getElementById('tg-btn').href = manifestData.telegram;
+            }
+
+            // Рендер лучших файлов
+            const bestContainer = document.getElementById('best-container');
+            bestContainer.innerHTML = '';
+            if (manifestData.best_files && manifestData.best_files.length > 0) {
+                document.getElementById('best-section').classList.remove('hidden');
+                manifestData.best_files.forEach(file => {
+                    bestContainer.appendChild(createBestCard(file));
+                });
+            }
+
+            // Рендер всех файлов из подписок
+            renderAllFiles();
+            lucide.createIcons();
+        }
+
+        // Создание карточки для лучших файлов
+        function createBestCard(file) {
+            const card = document.createElement('div');
+            card.className = "card-blur p-6 rounded-3xl transition duration-300 hover:border-amber-500/30 flex flex-col justify-between";
+            card.innerHTML = `
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-amber-500/10 rounded-2xl text-amber-500">
+                            <i data-lucide="star" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full">${file.count} прокси</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">${file.name}</h3>
+                    <p class="text-gray-400 text-sm mb-6">${file.description}</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3 mt-auto">
+                    <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-amber-500 hover:text-black text-gray-200 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm">
+                        <i data-lucide="copy" class="w-4 h-4"></i> Копировать
+                    </button>
+                    <button onclick="downloadFile('${file.filepath}', 'best_configs.txt')" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-400 font-semibold py-3 px-4 rounded-xl transition duration-200 text-sm border border-gray-800">
+                        <i data-lucide="download" class="w-4 h-4"></i> Скачать
+                    </button>
+                </div>
+            `;
+            return card;
+        }
+
+        // Рендер списка вообще всех подписок
+        function renderAllFiles(filterText = '') {
+            const container = document.getElementById('all-files-container');
+            container.innerHTML = '';
+            
+            let filesFound = 0;
+            const searchLower = filterText.toLowerCase();
+
+            if (!manifestData || !manifestData.sources) return;
+
+            manifestData.sources.forEach(source => {
+                source.files.forEach(file => {
+                    const isMatched = source.friendly_name.toLowerCase().includes(searchLower) || file.filename.toLowerCase().includes(searchLower);
+                    if (!isMatched && filterText !== '') return;
+
+                    filesFound++;
+                    const card = document.createElement('div');
+                    card.className = "card-blur p-5 rounded-2xl border border-gray-800 hover:border-gray-700 transition duration-200 flex flex-col justify-between";
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs font-medium text-gray-500 max-w-[180px] truncate" title="${source.source_url}">
+                                    ${source.friendly_name}
+                                </span>
+                                <span class="text-xs px-2.5 py-0.5 bg-gray-800 text-gray-400 rounded-md">Часть ${file.part} • ${file.count} шт</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-4 truncate" title="${file.filename}">${file.filename}</h4>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-1.5 bg-gray-900 hover:bg-amber-500 hover:text-black text-gray-300 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Ссылка
+                            </button>
+                            <button onclick="downloadFile('${file.filepath}', '${file.filename}')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
+                                <i data-lucide="download" class="w-3.5 h-3.5"></i> Скачать
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+
+            const noResults = document.getElementById('no-results');
+            if (filesFound === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+            lucide.createIcons();
+        }
+
+        // Фильтрация при вводе в поиск
+        function filterFiles() {
+            const query = document.getElementById('search-input').value;
+            renderAllFiles(query);
+        }
+
+        // Копирование в буфер обмена
         function copyRawLink(filePath) {
             const fullUrl = `${rawBaseUrl}/${filePath}`;
             
-            // Совместимый с Iframe буфер обмена
             const el = document.createElement('textarea');
             el.value = fullUrl;
             document.body.appendChild(el);
@@ -206,10 +288,45 @@
             document.execCommand('copy');
             document.body.removeChild(el);
 
-            showToast();
+            showToast("Ссылка скопирована!", "Используйте её для добавления в VPN-приложение.");
         }
 
-        function showToast() {
+        // Принудительное скачивание файла вместо открытия в браузере
+        function downloadFile(filePath, downloadName) {
+            const url = `${rawBaseUrl}/${filePath}`;
+            
+            showToast("Запуск скачивания...", "Файл подготавливается к сохранению.");
+            
+            fetch(url)
+                .then(res => {
+                    if (!res.ok) throw new Error("Не удалось загрузить файл");
+                    return res.blob();
+                })
+                .then(blob => {
+                    const downloadUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = downloadUrl;
+                    a.download = downloadName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(downloadUrl);
+                    document.body.removeChild(a);
+                    
+                    showToast("Файл сохранен!", `Файл ${downloadName} скачан на устройство.`);
+                })
+                .catch(err => {
+                    console.error("Ошибка скачивания:", err);
+                    showToast("Ошибка скачивания", "Не удалось скачать файл напрямую. Открываем в новой вкладке...");
+                    window.open(url, '_blank');
+                });
+        }
+
+        // Вывод тоста
+        function showToast(title, desc) {
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            
             const toast = document.getElementById('toast');
             toast.classList.remove('translate-y-20', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
