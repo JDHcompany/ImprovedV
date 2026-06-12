@@ -413,16 +413,23 @@ def fetch_and_save():
         json.dump(manifest_data, mf, ensure_ascii=False, indent=2)
     print(f"Манифест сохранен in {MANIFEST_FILE}")
 
-    # Запись ссылок
+    # Формируем ссылки с использованием домена GitHub Pages
     github_repository = os.environ.get("GITHUB_REPOSITORY", "USER/REPO")
-    raw_url_base = f"https://raw.githubusercontent.com/{github_repository}/main"
+    if "/" in github_repository:
+        username, repo_name = github_repository.split("/", 1)
+        pages_url_base = f"https://{username}.github.io/{repo_name}"
+    else:
+        pages_url_base = f"https://raw.githubusercontent.com/{github_repository}/main"
     
     try:
         with open(BEST_LINKS_FILE, 'w', encoding='utf-8') as link_file:
-            link_file.write("# Прямые ссылки на лучшие конфигурации\n\n")
-            link_file.write("## RAW GitHub ссылки:\n")
+            link_file.write("# Прямые ссылки на лучшие конфигурации (GitHub Pages)\n")
+            link_file.write("# Эти ссылки красивыми сайтами открываются в браузере и импортируются в VPN!\n\n")
+            link_file.write("## Ссылки для Nekobox / Happ / Browser:\n")
             for path in best_file_paths:
-                link_file.write(f"{raw_url_base}/{path}\n")
+                # Нормализуем путь для URL (заменяем обратные слэши на прямые, если запускается в Windows)
+                normalized_path = path.replace("\\", "/")
+                link_file.write(f"{pages_url_base}/{normalized_path}\n")
     except Exception as e:
         print(f"Ошибка записи ссылок: {e}")
 
