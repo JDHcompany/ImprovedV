@@ -1,0 +1,39 @@
+name: Update Configs
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Запускать в начале каждого часа
+  workflow_dispatch:   # Позволяет запускать вручную
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Run script to fetch and test configs
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: python fetch_configs.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Добавляем папки с обновленными прокси-файлами
+        git add configs/ best_files_links.txt
+        
+        if git diff --cached --quiet; then
+          echo "Изменений в конфигурациях нет. Пропускаем коммит."
+        else
+          git commit -m "Автоматическое обновление и TCP-валидация"
+          git push
+        fi
