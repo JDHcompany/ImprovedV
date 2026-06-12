@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-12 17:29:25 UTC",
+  "last_updated": "2026-06-12 17:38:48 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -392,12 +392,12 @@
     {
       "source_url": "https://subrostunnel.vercel.app/gen.txt",
       "friendly_name": "subrostunnel_vercel_app_gen_txt",
-      "total_count": 71,
+      "total_count": 88,
       "files": [
         {
           "filename": "subrostunnel_vercel_app_gen_txt.html",
           "filepath": "configs/subrostunnel_vercel_app_gen_txt.html",
-          "count": 71,
+          "count": 88,
           "part": 1
         }
       ]
