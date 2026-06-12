@@ -14,8 +14,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.error import URLError, HTTPError
 
 # ==================== НАСТРОЙКИ БРЕНДА ====================
-# ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШ ТЕЛЕГРАМ-КАНАЛ:
-TG_CHANNEL_LINK = "https://t.me/your_telegram_channel"
+# Ссылка на вашего Telegram-бота (используется для сайта)
+TG_CHANNEL_LINK = "https://t.me/freevpnconf_bot"
 # ==========================================================
 
 # Основные настройки скрипта
@@ -172,12 +172,13 @@ def check_all_configs_parallel(all_configs):
     return [item[0] for item in valid_configs]
 
 def generate_file_content(configs, start_index=1):
-    """Создает содержимое файла с метаданными бренда в начале."""
+    """Создает содержимое файла со строгими метаданными профиля подписки."""
     header_lines = [
-        "# Название: 🍟ImprovedVPN",
-        "# Безлимит пользования без ограничений",
-        f"# Описание : Мой ТГК - {TG_CHANNEL_LINK}",
-        f"# ссылка на канал : {TG_CHANNEL_LINK}",
+        "# profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot",
+        "# profile-update-interval: 1",
+        "# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800",
+        "# support-url: https://t.me/freevpnconf_bot",
+        "# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot",
         ""
     ]
     
@@ -207,7 +208,7 @@ def fetch_and_save():
         return
 
     all_gathered_configs = []
-    manifest_sources = [] # Список для сохранения структуры файлов в JSON
+    manifest_sources = []
 
     # 1. Скачивание конфигов
     for index, link in enumerate(links, start=1):
@@ -281,10 +282,10 @@ def fetch_and_save():
                     f.write(file_content_1)
                 best_file_paths.append(path_1)
                 best_manifest_files.append({
-                    "name": "🔥 Лучшие прокси — Часть 1 (Топ 1-200)",
+                    "name": "🔥 Лучшие прокси — Часть 1",
                     "filepath": "configs/best_1.txt",
                     "count": len(best_1_chunk),
-                    "description": "Самые быстрые серверы с наименьшей задержкой отклика по результатам TCP-теста."
+                    "description": "Самые быстрые проверенные серверы (топ 1-200 по пингу)."
                 })
 
             # Файл 2: Топ 201-400 лучших
@@ -296,10 +297,10 @@ def fetch_and_save():
                     f.write(file_content_2)
                 best_file_paths.append(path_2)
                 best_manifest_files.append({
-                    "name": "⚡ Резервные прокси — Часть 2 (Топ 201-400)",
+                    "name": "⚡ Резервные прокси — Часть 2",
                     "filepath": "configs/best_2.txt",
                     "count": len(best_2_chunk),
-                    "description": "Надежный дополнительный пул проверенных прокси-серверов."
+                    "description": "Дополнительный пул качественных серверов (топ 201-400)."
                 })
 
     # Записываем манифест JSON для веб-сайта
