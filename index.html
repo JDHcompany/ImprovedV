@@ -29,7 +29,7 @@
 </head>
 <body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
 
-    <!-- Декоративный анимированный фон -->
+    <!-- Декоративный фон -->
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
     <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -49,9 +49,9 @@
             </p>
             
             <div class="mt-6 flex flex-wrap justify-center gap-4">
-                <a id="tg-btn" href="#" target="_blank" class="glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-semibold px-6 py-3 rounded-2xl transition duration-300 transform hover:-translate-y-0.5">
-                    <i data-lucide="send" class="w-5 h-5"></i>
-                    Наш Telegram-канал
+                <a id="tg-btn" href="https://t.me/freevpnconf_bot" target="_blank" class="glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-semibold px-6 py-3 rounded-2xl transition duration-300 transform hover:-translate-y-0.5">
+                    <i data-lucide="bot" class="w-5 h-5"></i>
+                    Наш Telegram-бот
                 </a>
                 <div class="inline-flex items-center gap-2 bg-gray-900/80 px-5 py-3 rounded-2xl text-gray-400 text-sm border border-gray-800">
                     <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
@@ -60,20 +60,20 @@
             </div>
         </header>
 
-        <!-- Поиск и фильтрация -->
-        <section class="mb-8">
+        <!-- Поиск -->
+        <section class="mb-10">
             <div class="relative max-w-md mx-auto">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
                     <i data-lucide="search" class="w-5 h-5"></i>
                 </div>
-                <input type="text" id="search-input" oninput="filterFiles()" placeholder="Поиск файлов по названию или домену..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900/60 border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 transition duration-200 card-blur">
+                <input type="text" id="search-input" oninput="filterFiles()" placeholder="Поиск по домену или источнику..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900/60 border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 transition duration-200 card-blur">
             </div>
         </section>
 
         <!-- Основная панель -->
         <main class="space-y-12">
             
-            <!-- Секция 1: Топ лучшие (если есть) -->
+            <!-- Секция 1: Топ лучшие -->
             <div id="best-section" class="hidden">
                 <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
                     <i data-lucide="zap" class="text-amber-500 w-6 h-6 animate-pulse"></i>
@@ -88,7 +88,7 @@
             <div>
                 <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
                     <i data-lucide="file-text" class="text-amber-500 w-6 h-6"></i>
-                    Все доступные файлы подписок
+                    Все доступные подписки
                 </h2>
                 
                 <!-- Сообщение о пустом поиске -->
@@ -97,7 +97,7 @@
                     <p class="text-gray-400">Файлы с таким именем не найдены.</p>
                 </div>
 
-                <div id="all-files-container" class="grid md:grid-cols-2 gap-6">
+                <div id="all-files-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Заполняется динамически -->
                 </div>
             </div>
@@ -124,7 +124,7 @@
             </div>
             <div>
                 <a id="github-link" href="#" target="_blank" class="hover:text-amber-500 transition duration-200 flex items-center gap-1.5 justify-center">
-                    <i data-lucide="github" class="w-4 h-4"></i> Исходный код на GitHub
+                    <i data-lucide="github" class="w-4 h-4"></i> Код на GitHub
                 </a>
             </div>
         </div>
@@ -231,29 +231,32 @@
 
             if (!manifestData || !manifestData.sources) return;
 
-            manifestData.sources.forEach(source => {
+            manifestData.sources.forEach((source, sourceIdx) => {
                 source.files.forEach(file => {
-                    const isMatched = source.friendly_name.toLowerCase().includes(searchLower) || file.filename.toLowerCase().includes(searchLower);
+                    const cleanFriendlyName = source.friendly_name.replace(/_/g, '.').replace('com.', 'com - ');
+                    const isMatched = cleanFriendlyName.toLowerCase().includes(searchLower) || file.filename.toLowerCase().includes(searchLower);
                     if (!isMatched && filterText !== '') return;
 
                     filesFound++;
                     const card = document.createElement('div');
-                    card.className = "card-blur p-5 rounded-2xl border border-gray-800 hover:border-gray-700 transition duration-200 flex flex-col justify-between";
+                    card.className = "card-blur p-5 rounded-2xl border border-gray-800 hover:border-amber-500/10 transition duration-200 flex flex-col justify-between";
                     card.innerHTML = `
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <span class="text-xs font-medium text-gray-500 max-w-[180px] truncate" title="${source.source_url}">
-                                    ${source.friendly_name}
+                                <span class="text-[11px] font-bold px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-md">
+                                    Часть ${file.part} • ${file.count} шт
                                 </span>
-                                <span class="text-xs px-2.5 py-0.5 bg-gray-800 text-gray-400 rounded-md">Часть ${file.part} • ${file.count} шт</span>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-4 truncate" title="${file.filename}">${file.filename}</h4>
+                            <h4 class="text-base font-bold text-white mb-2">🍟 Improved-potato</h4>
+                            <p class="text-gray-500 text-xs truncate mb-4" title="${source.source_url}">
+                                Источник: ${cleanFriendlyName}
+                            </p>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div class="grid grid-cols-2 gap-2">
                             <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-1.5 bg-gray-900 hover:bg-amber-500 hover:text-black text-gray-300 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs">
                                 <i data-lucide="copy" class="w-3.5 h-3.5"></i> Ссылка
                             </button>
-                            <button onclick="downloadFile('${file.filepath}', '${file.filename}')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
+                            <button onclick="downloadFile('${file.filepath}', 'improved-potato-part${file.part}.txt')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Скачать
                             </button>
                         </div>
@@ -288,14 +291,14 @@
             document.execCommand('copy');
             document.body.removeChild(el);
 
-            showToast("Ссылка скопирована!", "Используйте её для добавления в VPN-приложение.");
+            showToast("Ссылка копирована!", "Используйте её в любом прокси-клиенте.");
         }
 
-        // Принудительное скачивание файла вместо открытия в браузере
+        // Принудительное скачивание файла
         function downloadFile(filePath, downloadName) {
             const url = `${rawBaseUrl}/${filePath}`;
             
-            showToast("Запуск скачивания...", "Файл подготавливается к сохранению.");
+            showToast("Скачивание...", "Файл подготавливается.");
             
             fetch(url)
                 .then(res => {
@@ -317,7 +320,7 @@
                 })
                 .catch(err => {
                     console.error("Ошибка скачивания:", err);
-                    showToast("Ошибка скачивания", "Не удалось скачать файл напрямую. Открываем в новой вкладке...");
+                    showToast("Ошибка скачивания", "Не удалось скачать напрямую. Открываем в новой вкладке...");
                     window.open(url, '_blank');
                 });
         }
