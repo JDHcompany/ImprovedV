@@ -1,0 +1,10 @@
+# Название: 🍟ImprovedVPN
+# Безлимит пользования без ограничений
+# Описание : Мой ТГК - https://t.me/your_telegram_channel
+# ссылка на канал : https://t.me/your_telegram_channel
+
+vless://7b3c9520-e00e-482b-a814-6eb428d105cc@158.160.248.32:443?security=reality&encryption=none&pbk=XguLRlc-hWqFhf8-KTxtCE434F6e4Hiqoc5cTBpLxnE&headerType=none&fp=random&type=tcp&flow=xtls-rprx-vision&sni=5post-gate.x5.ru&sid=111111#%F0%9F%8D%9FImproved-potato%20%5B1%5D
+vless://3a3f672d-1161-42b2-bff7-d43b345c7298@5.188.114.44:443?security=reality&alpn=http%2F1.1&encryption=none&pbk=h6gpE3mCwKFwTx7nn_hAtAIF1pHFIuXWdNVyYrokqkI&fp=firefox&type=grpc&sni=max.ru&sid=dcbaae96dfd126d0#%F0%9F%8D%9FImproved-potato%20%5B2%5D
+vless://409bdb0f-5aae-4e93-a8dd-60adc47d5fd3@158.160.101.240:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru&sid=428ef87fd47a3a32#%F0%9F%8D%9FImproved-potato%20%5B3%5D
+vless://b6ce8a51-19b9-4979-91ba-b4298c26d5fc@109.120.191.5:443?mode=gun&security=tls&alpn=h2&encryption=none&insecure=0&fp=chrome&type=grpc&serviceName=grpc-tunnel&allowInsecure=0&sni=api-staging.dropmefile.net#%F0%9F%8D%9FImproved-potato%20%5B4%5D
+vless://2420af47-2316-482e-bb0f-b164df4b2334@158.160.33.146:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=web.max.ru&sid=428ef87fd47a3a32#%F0%9F%8D%9FImproved-potato%20%5B5%5D
