@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍟 ImprovedVPN — Подписка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        .card-blur {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-xl w-full mx-auto px-4 py-16 z-10 my-auto">
+        <div class="card-blur p-8 rounded-3xl glow-effect text-center border border-amber-500/20">
+            <div class="inline-flex items-center justify-center p-3 bg-amber-500/10 rounded-2xl mb-6">
+                <span class="text-4xl">🍟</span>
+            </div>
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+                ImprovedVPN
+            </h1>
+            <p class="text-sm text-gray-400 mt-2">Ваша персональная подписка готова к работе!</p>
+            
+            <div class="my-6 p-4 bg-gray-950/50 rounded-2xl border border-gray-800 text-left">
+                <div class="text-xs text-gray-500">Имя подписки:</div>
+                <div class="text-base font-bold text-white mt-1">🍟 Improved-potato</div>
+                <div class="text-xs text-gray-500 mt-3">Количество конфигураций в файле:</div>
+                <div class="text-base font-bold text-amber-400 mt-1">80 шт</div>
+            </div>
+
+            <button onclick="copyCurrentUrl()" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 transform hover:scale-[1.02]">
+                <i data-lucide="copy" class="w-5 h-5"></i>
+                Скопировать ссылку на подписку
+            </button>
+
+            <a href="https://t.me/freevpnconf_bot" target="_blank" class="mt-4 w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-bold py-3.5 px-6 rounded-xl transition duration-200 border border-gray-800">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+                Наш Telegram-бот
+            </a>
+        </div>
+    </div>
+
+    <!-- Всплывающий тост -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
+        <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <div class="font-bold text-sm">Ссылка скопирована!</div>
+            <div class="text-xs text-gray-400 mt-0.5">Добавьте ее в Nekobox или Happ</div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function copyCurrentUrl() {
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+
+    <!-- СКРЫТЫЙ БЛОК ДЛЯ VPN КЛИЕНТОВ (ОНИ СЧИТАЮТ ТОЛЬКО ЭТО) -->
+    <!--
+    # profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot
+# profile-update-interval: 1
+# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800
+# support-url: https://t.me/freevpnconf_bot
+# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot
+
+vless://fb89a947-0d5b-43b2-982e-20b89d48d161@51.250.96.237:443?encryption=none&fp=chrome&pbk=Hwodw89GLba65CMpzNVcUycU9n25tBZOOIlPZcwEk0o&security=reality&sid=cc015aacdfd7cfd7&sni=ads.x5.ru&type=grpc#%F0%9F%8D%9FImproved-potato%20%5B1%5D
+trojan://humanity@www.calmlunch.com:443?type=ws&host=www.calmlunch.com&path=/assignment&security=tls&sni=www.calmlunch.com&allowInsecure=1#%F0%9F%8D%9FImproved-potato%20%5B2%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@46.8.229.111:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B3%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@147.45.197.78:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B4%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@212.34.155.252:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B5%5D
+vless://ea1e7efc-3c9f-41a5-b7d9-71c22e223ddd@51.250.24.232:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=cdp.x5.ru&pbk=wgXD4k3A16WR0aL63N9Mx8xoqFigJLyQWJXi-l3MPXI&sid=8ec792bfd725be8a#%F0%9F%8D%9FImproved-potato%20%5B6%5D
+vless://a1fbffe9-8e5a-5a0e-9333-045d32eccd59@serbia.cloudpath.live:443?type=tcp&headertype=none&security=reality&encryption=none&sni=microsoft.com&fp=chrome&pbk=UOp1SM7b6AgDZAwQ6aTLGzCyKv-K6Xxkiedp2619jwc&sid=857ec9a9#%F0%9F%8D%9FImproved-potato%20%5B7%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@89.110.102.169:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B8%5D
+vless://72c319bb-577f-481c-8fc7-0364d72a395d@ip2.bv24.org:2083?type=ws&headertype=none&security=tls&encryption=none&sni=fi2.bv24.org&fp=chrome&alpn=http/1.1&path=/?ed=2048&host=fi2.bv24.org&allowInsecure=1#%F0%9F%8D%9FImproved-potato%20%5B9%5D
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@154.9.239.44:443?sni=sni.skylee4.cloudns.ch&type=ws&host=sni.skylee4.cloudns.ch&path=/proxyip=ProxyIP.CMLiussss.netfp=chrome&security=tls#%F0%9F%8D%9FImproved-potato%20%5B10%5D
+vless://ab8fda13-f963-4cc0-b599-3a92f71c0f7f@84.201.128.19:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=max.ru&pbk=BjG7XoEMR2uxHbBk_rtkR7P_S_luG2VcvQlvZ4YHzH8&sid=27e53bbcab7593d7&spx=#%F0%9F%8D%9FImproved-potato%20%5B11%5D
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@ciallo-egb.pages.dev:2083?type=ws&security=tls&host=cIAllO-EGB.pAGES.dev#%F0%9F%8D%9FImproved-potato%20%5B12%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@152.53.200.89:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B13%5D
+vless://dad97768-187b-40be-b423-2f312f740085@jp.nodes.rocketnetwork.ru:443?type=tcp&headertype=none&security=reality&encryption=none&sni=jp.nodes.rocketnetwork.ru&fp=chrome&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&sid=428ef87fd47a3a32&flow=xtls-rprx-vision#%F0%9F%8D%9FImproved-potato%20%5B14%5D
+vless://2bcfbfba-b446-4ad5-93ad-72af9e008f61@188.114.96.3:443?encryption=none&type=ws&security=tls&path=/free/1.226.227.169%3A50001&host=nuclear.us.kg&sni=nuclear.us.kg#%F0%9F%8D%9FImproved-potato%20%5B15%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@95.182.116.192:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B16%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMY0dpbVlEQlhvYUoyZ1UyazJ0NzZH@195.93.253.245:49137#%F0%9F%8D%9FImproved-potato%20%5B17%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@45.84.88.232:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&path=/trTelegram%2B%40WangCai2&host=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B18%5D
+vless://d78c12c4-6927-40b8-8550-ed9be00334da@aasdfvdfs.chickenkiller.com:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&sni=aasdfvdfs.chickenkiller.com&fp=chrome&pbk=Y1JtXdO-SVUVWCForQZNPig9aNvFNsAsYv_w_HONX1U&sid=71a5d1e8fef1f643#%F0%9F%8D%9FImproved-potato%20%5B19%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@94.183.188.139:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B20%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@195.123.217.37:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B21%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@77.238.252.140:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B22%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@37.139.0.134:2053?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B23%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@89.125.78.74:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B24%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@195.58.50.128:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B25%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@195.26.230.99:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B26%5D
+vless://072e9c82-5e88-4a61-b047-3e70ca60704b@158.160.249.158:8443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=ads.x5.ru&pbk=r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs&sid=672ff000#%F0%9F%8D%9FImproved-potato%20%5B27%5D
+vless://00000000-0000-0000-0000-000000000000@swordware.net:1?path=swordware&security=none&encryption=none&host=swordware&advancedfragment=c3dvcmR3YXJlLm5ldA==&type=httpupgrade#%F0%9F%8D%9FImproved-potato%20%5B28%5D
+vless://205adcdb-86e5-4c18-8294-9d950aa4c620@158.160.255.35:443?sni=api-maps.yandex.ru&flow=xtls-rprx-vision&pbk=EBISh6QAVskJ_nvet-Qio9jS2yqxe9de6GMScYlbjhI&sid=226509f017e4c36d&security=reality&fp=qq&type=tcp&encryption=none#%F0%9F%8D%9FImproved-potato%20%5B29%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg001287h3p.cybervena.com:50099#%F0%9F%8D%9FImproved-potato%20%5B30%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@45.144.51.133:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B31%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@45.91.168.197:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B32%5D
+vless://69060f1d-5a58-43ca-b37c-0571922158c4@84.201.128.19:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=max.ru&pbk=BjG7XoEMR2uxHbBk_rtkR7P_S_luG2VcvQlvZ4YHzH8&sid=27e53bbcab7593d7&spx=#%F0%9F%8D%9FImproved-potato%20%5B33%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@45.67.202.101:8443?security=tls&sni=Koma-YT.PAGeS.Dev&fp=chrome&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B34%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@31.59.120.180:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B35%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@178.62.222.5:8443?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B36%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@152.53.200.15:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B37%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@23.173.104.204:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B38%5D
+vless://7aadebf1-300c-4c07-b8d1-390bbee9d6c0@185.241.208.120:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=BrGL0gTKK_Ir2VwJOa91Vd8870DswnOXhA6-F92RBGI&sid=a987b6bd1781daa3&sni=eh.vk.com&freeinternet=kizyak_vpn1779772300273#%F0%9F%8D%9FImproved-potato%20%5B39%5D
+vless://dad97768-187b-40be-b423-2f312f740085@tr.nodes.rocketnetwork.ru:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=tr.nodes.rocketnetwork.ru&fp=chrome&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&sid=428ef87fd47a3a32#%F0%9F%8D%9FImproved-potato%20%5B40%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@178.236.253.242:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B41%5D
+vless://8697df5f-9826-463f-8a8a-e72eb7f2d5fa@51.250.24.222:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=cdp.x5.ru&pbk=wgXD4k3A16WR0aL63N9Mx8xoqFigJLyQWJXi-l3MPXI&sid=8ec792bfd725be8a#%F0%9F%8D%9FImproved-potato%20%5B42%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@194.37.81.117:2053?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B43%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@89.110.122.18:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B44%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@188.114.99.243:2096?security=tls&allowInsecure=1&encryption=none&type=ws&host=sni.111000.indevs.in&path=/?ed=2560&sni=sni.111000.indevs.in&fp=chrome#%F0%9F%8D%9FImproved-potato%20%5B45%5D
+vless://c61ec320-29f1-4e00-9272-8b676e6957b4@89.169.39.55:443?encryption=none&flow=xtls-rprx-vision&type=tcp&headertype=none&security=reality&sni=max.ru&fp=qq&pbk=Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU&sid=28a059440d3d5ba1#%F0%9F%8D%9FImproved-potato%20%5B46%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@188.166.43.158:2096?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B47%5D
+vless://00000000-0000-4000-8000-000000000000@140.238.33.0:33940?sni=57vanjkxjo3kejbf4o2iul6z4o.gike.dpdns.org&type=ws&host=57vanjkxjo3kejbf4o2iul6z4o.gike.dpdns.org&path=/%40Marisa_kristifp=chrome&security=tls#%F0%9F%8D%9FImproved-potato%20%5B48%5D
+vless://e69587b1-0932-4f61-bb2f-90a29ec6621f@202.148.52.37:443?type=tcp&headertype=none&security=reality&encryption=none&sni=max.ru&fp=chrome&pbk=D1Zg99Jz5L0ZgGIajsqNPjqPTHGVPMDCGYBemyWA-yg&sid=6611698d8f3c&flow=xtls-rprx-vision#%F0%9F%8D%9FImproved-potato%20%5B49%5D
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@43.247.134.179:8443?encryption=none&type=ws&sni=sni.skylee4.cloudns.ch&security=tls&fp=chrome&host=sni.skylee4.cloudns.ch&path=/proxyip=ProxyIP.CMLiussss.net#%F0%9F%8D%9FImproved-potato%20%5B50%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@193.42.61.69:8443?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B51%5D
+vless://bab83557-ec95-4f6d-bfad-8864ba09a87a@84.201.128.19:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=www.vk.com&pbk=bwuT_tpimT_uUeWpSn-HbRztfol4o4uCcUHcdvkeFx0&sid=27e53bbcab7593d7&spx=#%F0%9F%8D%9FImproved-potato%20%5B52%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.155:8080#%F0%9F%8D%9FImproved-potato%20%5B53%5D
+vless://5519f173-d908-4802-94c9-25ae82d17790@109.248.168.87:43000?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=XGuhvmiGuyvCAt8D-GFA1iEqAH1mflN1i2ZajULRfnM&sid=9710e02f&spx=#%F0%9F%8D%9FImproved-potato%20%5B54%5D
+vless://ea1e7efc-3c9f-41a5-b7d9-71c22e223ddd@51.250.102.69:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=cdp.x5.ru&pbk=wgXD4k3A16WR0aL63N9Mx8xoqFigJLyQWJXi-l3MPXI&sid=8ec792bfd725be8a#%F0%9F%8D%9FImproved-potato%20%5B55%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@31.133.0.55:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B56%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@91.84.110.42:8443?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B57%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@185.209.161.208:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B58%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@194.164.33.185:2053?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B59%5D
+vless://60d0630c-8ac4-436d-ad2c-b798b63e1c69@by.nodes.rocketnetwork.ru:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=by.nodes.rocketnetwork.ru&fp=chrome&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&sid=428ef87fd47a3a32&type=tcp&headertype=none#%F0%9F%8D%9FImproved-potato%20%5B60%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@188.166.111.197:2083?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B61%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@64.227.68.55:2053?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B62%5D
+vless://fc625795-792d-4d9d-9d38-bffe59467d2d@104.18.3.150:443?security=tls&encryption=none&host=daluan.eu.org&fp=randomized&type=ws&sni=daluan.eu.org#%F0%9F%8D%9FImproved-potato%20%5B63%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@77.246.110.179:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B64%5D
+vless://4117cd64-315c-483c-b7cb-18de4c156301@84.201.128.19:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=www.vk.com&pbk=bwuT_tpimT_uUeWpSn-HbRztfol4o4uCcUHcdvkeFx0&sid=27e53bbcab7593d7&spx=#%F0%9F%8D%9FImproved-potato%20%5B65%5D
+trojan://gcuCpQfaiVeDBdWG@jpbgp.netvigor.cc:19128?type=raw&headertype=none&security=tls&sni=yazhou10.dynu.net#%F0%9F%8D%9FImproved-potato%20%5B66%5D
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@82.153.135.172:443?encryption=none&type=ws&sni=sni.skylee4.cloudns.ch&security=tls&fp=chrome&host=sni.skylee4.cloudns.ch&path=/proxyip=ProxyIP.CMLiussss.net#%F0%9F%8D%9FImproved-potato%20%5B67%5D
+trojan://humanity@www.calmlunch.com:443?security=tls&type=ws&host=www.calmlunch.com&path=/assignment#%F0%9F%8D%9FImproved-potato%20%5B68%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@147.45.196.240:2053?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B69%5D
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@219.76.13.183:443?sni=sn1.skylee5.cloudns.ch&type=ws&host=sn1.skylee5.cloudns.ch&path=/fp=chrome&security=tls#%F0%9F%8D%9FImproved-potato%20%5B70%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@87.251.16.237:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&path=/trTelegram%2B%40WangCai2&host=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B71%5D
+vless://2a77facf-5f27-4ec4-b9e9-9bab785a03a8@130.193.41.117:8443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=firefox&sni=ads.x5.ru&pbk=7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg&sid=f4b4a6365558ea2e&nonce=XKT-L-yu#%F0%9F%8D%9FImproved-potato%20%5B72%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@46.243.3.200:2053?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B73%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@45.81.225.153:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&host=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B74%5D
+trojan://humanity@www.creationlong.org:443?security=tls&type=ws&host=www.creationlong.org&path=/assignment#%F0%9F%8D%9FImproved-potato%20%5B75%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@46.149.73.96:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B76%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@212.34.129.171:8443?security=tls&sni=Koma-YT.PAGeS.Dev&type=ws&host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%F0%9F%8D%9FImproved-potato%20%5B77%5D
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@64.186.248.118:8443?encryption=none&type=ws&sni=sni.skylee4.cloudns.ch&security=tls&fp=chrome&host=sni.skylee4.cloudns.ch&path=/proxyip=ProxyIP.CMLiussss.net#%F0%9F%8D%9FImproved-potato%20%5B78%5D
+trojan://humanity@chat.openai.com:443?path=/assignment&security=tls&alpn=h2,http/1.1&allowInsecure=1&host=www.calmlunch.com&fp=chrome&type=ws&sni=www.calmlunch.com#%F0%9F%8D%9FImproved-potato%20%5B79%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@167.99.35.193:2083?host=Koma-YT.PAGeS.Dev&path=/trTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&type=ws#%F0%9F%8D%9FImproved-potato%20%5B80%5D
+    -->
+</body>
+</html>

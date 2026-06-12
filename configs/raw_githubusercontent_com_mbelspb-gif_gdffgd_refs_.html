@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍟 ImprovedVPN — Подписка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        .card-blur {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-xl w-full mx-auto px-4 py-16 z-10 my-auto">
+        <div class="card-blur p-8 rounded-3xl glow-effect text-center border border-amber-500/20">
+            <div class="inline-flex items-center justify-center p-3 bg-amber-500/10 rounded-2xl mb-6">
+                <span class="text-4xl">🍟</span>
+            </div>
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+                ImprovedVPN
+            </h1>
+            <p class="text-sm text-gray-400 mt-2">Ваша персональная подписка готова к работе!</p>
+            
+            <div class="my-6 p-4 bg-gray-950/50 rounded-2xl border border-gray-800 text-left">
+                <div class="text-xs text-gray-500">Имя подписки:</div>
+                <div class="text-base font-bold text-white mt-1">🍟 Improved-potato</div>
+                <div class="text-xs text-gray-500 mt-3">Количество конфигураций в файле:</div>
+                <div class="text-base font-bold text-amber-400 mt-1">10 шт</div>
+            </div>
+
+            <button onclick="copyCurrentUrl()" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 transform hover:scale-[1.02]">
+                <i data-lucide="copy" class="w-5 h-5"></i>
+                Скопировать ссылку на подписку
+            </button>
+
+            <a href="https://t.me/freevpnconf_bot" target="_blank" class="mt-4 w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-bold py-3.5 px-6 rounded-xl transition duration-200 border border-gray-800">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+                Наш Telegram-бот
+            </a>
+        </div>
+    </div>
+
+    <!-- Всплывающий тост -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
+        <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <div class="font-bold text-sm">Ссылка скопирована!</div>
+            <div class="text-xs text-gray-400 mt-0.5">Добавьте ее в Nekobox или Happ</div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function copyCurrentUrl() {
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+
+    <!-- СКРЫТЫЙ БЛОК ДЛЯ VPN КЛИЕНТОВ (ОНИ СЧИТАЮТ ТОЛЬКО ЭТО) -->
+    <!--
+    # profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot
+# profile-update-interval: 1
+# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800
+# support-url: https://t.me/freevpnconf_bot
+# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot
+
+vless://cc5201c6-b6b9-4065-adad-ab6d17958b94@de01.botovod.space:443?mode=auto&path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&echfq=none&fp=chrome&allowinsecure=0&type=xhttp&sni=de01.botovod.space#%F0%9F%8D%9FImproved-potato%20%5B1%5D
+vless://6e41151e-ae07-4ea6-910e-7a3986b7bc0d@31.56.188.60:7443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&sni=mi.com&fp=firefox&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&sid=d82fb387#%F0%9F%8D%9FImproved-potato%20%5B2%5D
+vless://cc5201c6-b6b9-4065-adad-ab6d17958b94@ee01.botovod.space:443?mode=auto&path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&echfq=none&fp=chrome&allowinsecure=0&type=xhttp&sni=ee01.botovod.space#%F0%9F%8D%9FImproved-potato%20%5B3%5D
+vless://039a1658-e86e-475f-a3a4-67cc249acada@nl4.panel11.ru:443?security=reality&encryption=none&pbk=n4TFeuXAigmWJ9sXqnyicRkw3vcXy27ARfvhhsA61kI&headerType=none&fp=firefox&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nl4.panel11.ru&sid=0bd0285f0c4f8f05#%F0%9F%8D%9FImproved-potato%20%5B4%5D
+vless://cc5201c6-b6b9-4065-adad-ab6d17958b94@fi01.botovod.space:443?mode=auto&path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&echfq=none&fp=chrome&allowinsecure=0&type=xhttp&sni=fi01.botovod.space#%F0%9F%8D%9FImproved-potato%20%5B5%5D
+vless://6e41151e-ae07-4ea6-910e-7a3986b7bc0d@45.141.118.146:7443?type=grpc&security=reality&encryption=none&flow=&sni=apple.com&fp=firefox&pbk=RTa9W5Sq3CjIvirE8jFvIwZLreM5Z-9ZQ5_zZHv0-yA&sid=#%F0%9F%8D%9FImproved-potato%20%5B6%5D
+vless://039a1658-e86e-475f-a3a4-67cc249acada@nl2.panel11.ru:443?security=reality&encryption=none&pbk=N1HRDSdKHqdbSX_N5SUfFiokXcN-jQzu-Na244bA21I&headerType=none&fp=firefox&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nl2.panel11.ru&sid=c64556c616970b14#%F0%9F%8D%9FImproved-potato%20%5B7%5D
+vless://00000000-0000-0000-0000-000000000000@swordware.net:1?path=swordware&security=none&encryption=swordware&host=swordware&advancedfragment=c3dvcmR3YXJlLm5ldA==&type=httpupgrade#%F0%9F%8D%9FImproved-potato%20%5B8%5D
+vless://cc5201c6-b6b9-4065-adad-ab6d17958b94@se02.botovod.space:443?mode=auto&path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&echfq=none&fp=chrome&allowinsecure=0&type=xhttp&sni=se02.botovod.space#%F0%9F%8D%9FImproved-potato%20%5B9%5D
+vless://6e41151e-ae07-4ea6-910e-7a3986b7bc0d@31.76.38.18:7443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&sni=icloud.com&fp=firefox&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&sid=d82fb387#%F0%9F%8D%9FImproved-potato%20%5B10%5D
+    -->
+</body>
+</html>

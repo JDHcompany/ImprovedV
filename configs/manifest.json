@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-12 06:53:25 UTC",
+  "last_updated": "2026-06-12 07:59:31 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
       "name": "🔥 Лучшие прокси — Часть 1",
-      "filepath": "configs/best_1.txt",
+      "filepath": "configs/best_1.html",
       "count": 200,
       "description": "Самые быстрые проверенные серверы (топ 1-200 по пингу)."
     },
     {
       "name": "⚡ Резервные прокси — Часть 2",
-      "filepath": "configs/best_2.txt",
+      "filepath": "configs/best_2.html",
       "count": 200,
       "description": "Дополнительный пул качественных серверов (топ 201-400)."
     }
@@ -22,68 +22,68 @@
       "total_count": 2012,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.html",
           "count": 200,
           "part": 5
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part6.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part6.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part6.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part6.html",
           "count": 200,
           "part": 6
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part7.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part7.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part7.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part7.html",
           "count": 200,
           "part": 7
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part8.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part8.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part8.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part8.html",
           "count": 200,
           "part": 8
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part9.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part9.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part9.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part9.html",
           "count": 200,
           "part": 9
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part10.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part10.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part10.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part10.html",
           "count": 200,
           "part": 10
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part11.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part11.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part11.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part11.html",
           "count": 12,
           "part": 11
         }
@@ -95,8 +95,8 @@
       "total_count": 16,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 16,
           "part": 1
         }
@@ -108,8 +108,8 @@
       "total_count": 85,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 85,
           "part": 1
         }
@@ -121,14 +121,14 @@
       "total_count": 248,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
           "count": 48,
           "part": 2
         }
@@ -140,8 +140,8 @@
       "total_count": 123,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 123,
           "part": 1
         }
@@ -153,8 +153,8 @@
       "total_count": 123,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 123,
           "part": 1
         }
@@ -166,14 +166,14 @@
       "total_count": 245,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
           "count": 45,
           "part": 2
         }
@@ -185,8 +185,8 @@
       "total_count": 22,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 22,
           "part": 1
         }
@@ -198,8 +198,8 @@
       "total_count": 1,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 1,
           "part": 1
         }
@@ -211,8 +211,8 @@
       "total_count": 95,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 95,
           "part": 1
         }
@@ -224,32 +224,32 @@
       "total_count": 963,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part5.html",
           "count": 163,
           "part": 5
         }
@@ -261,8 +261,8 @@
       "total_count": 95,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 95,
           "part": 1
         }
@@ -274,8 +274,8 @@
       "total_count": 30,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master_.html",
           "count": 30,
           "part": 1
         }
@@ -287,14 +287,14 @@
       "total_count": 346,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.txt",
+          "filename": "gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_ru-wbl_wl_raw_branch_master__part2.html",
           "count": 146,
           "part": 2
         }
@@ -306,8 +306,8 @@
       "total_count": 22,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
-          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
+          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
+          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "count": 22,
           "part": 1
         }
@@ -319,8 +319,8 @@
       "total_count": 51,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
-          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
+          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
+          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "count": 51,
           "part": 1
         }
@@ -332,8 +332,8 @@
       "total_count": 51,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
-          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
+          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
+          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "count": 51,
           "part": 1
         }
@@ -345,8 +345,8 @@
       "total_count": 28,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
-          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.txt",
+          "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
+          "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "count": 28,
           "part": 1
         }
@@ -358,32 +358,32 @@
       "total_count": 963,
       "files": [
         {
-          "filename": "subrostunnel_vercel_app_wl_txt_part1.txt",
-          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part1.txt",
+          "filename": "subrostunnel_vercel_app_wl_txt_part1.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "subrostunnel_vercel_app_wl_txt_part2.txt",
-          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part2.txt",
+          "filename": "subrostunnel_vercel_app_wl_txt_part2.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "subrostunnel_vercel_app_wl_txt_part3.txt",
-          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part3.txt",
+          "filename": "subrostunnel_vercel_app_wl_txt_part3.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "subrostunnel_vercel_app_wl_txt_part4.txt",
-          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part4.txt",
+          "filename": "subrostunnel_vercel_app_wl_txt_part4.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "subrostunnel_vercel_app_wl_txt_part5.txt",
-          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part5.txt",
+          "filename": "subrostunnel_vercel_app_wl_txt_part5.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_txt_part5.html",
           "count": 163,
           "part": 5
         }
@@ -392,12 +392,12 @@
     {
       "source_url": "https://subrostunnel.vercel.app/gen.txt",
       "friendly_name": "subrostunnel_vercel_app_gen_txt",
-      "total_count": 132,
+      "total_count": 45,
       "files": [
         {
-          "filename": "subrostunnel_vercel_app_gen_txt.txt",
-          "filepath": "configs/subrostunnel_vercel_app_gen_txt.txt",
-          "count": 132,
+          "filename": "subrostunnel_vercel_app_gen_txt.html",
+          "filepath": "configs/subrostunnel_vercel_app_gen_txt.html",
+          "count": 45,
           "part": 1
         }
       ]
@@ -408,8 +408,8 @@
       "total_count": 61,
       "files": [
         {
-          "filename": "etoneya_su_whitelist.txt",
-          "filepath": "configs/etoneya_su_whitelist.txt",
+          "filename": "etoneya_su_whitelist.html",
+          "filepath": "configs/etoneya_su_whitelist.html",
           "count": 61,
           "part": 1
         }
@@ -421,8 +421,8 @@
       "total_count": 129,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
-          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
+          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
+          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "count": 129,
           "part": 1
         }
@@ -434,8 +434,8 @@
       "total_count": 129,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
-          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
+          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
+          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "count": 129,
           "part": 1
         }
@@ -447,8 +447,8 @@
       "total_count": 49,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
-          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.txt",
+          "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
+          "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "count": 49,
           "part": 1
         }
@@ -460,14 +460,14 @@
       "total_count": 205,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_DestroyST6767_50af50221_part1.txt",
-          "filepath": "configs/gist_githubusercontent_com_DestroyST6767_50af50221_part1.txt",
+          "filename": "gist_githubusercontent_com_DestroyST6767_50af50221_part1.html",
+          "filepath": "configs/gist_githubusercontent_com_DestroyST6767_50af50221_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gist_githubusercontent_com_DestroyST6767_50af50221_part2.txt",
-          "filepath": "configs/gist_githubusercontent_com_DestroyST6767_50af50221_part2.txt",
+          "filename": "gist_githubusercontent_com_DestroyST6767_50af50221_part2.html",
+          "filepath": "configs/gist_githubusercontent_com_DestroyST6767_50af50221_part2.html",
           "count": 5,
           "part": 2
         }
@@ -476,25 +476,19 @@
     {
       "source_url": "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
       "friendly_name": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r",
-      "total_count": 455,
+      "total_count": 368,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part1.txt",
-          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part1.txt",
+          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part1.html",
+          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.txt",
-          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.txt",
-          "count": 200,
+          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.html",
+          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.html",
+          "count": 168,
           "part": 2
-        },
-        {
-          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part3.txt",
-          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part3.txt",
-          "count": 55,
-          "part": 3
         }
       ]
     },
@@ -504,8 +498,8 @@
       "total_count": 55,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
-          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
+          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
+          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
           "count": 55,
           "part": 1
         }
@@ -517,8 +511,8 @@
       "total_count": 154,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
-          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
+          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
+          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
           "count": 154,
           "part": 1
         }
@@ -530,8 +524,8 @@
       "total_count": 129,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
-          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.txt",
+          "filename": "raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
+          "filepath": "configs/raw_githubusercontent_com_Maskkost93_kizyak-vpn-4_.html",
           "count": 129,
           "part": 1
         }
@@ -543,8 +537,8 @@
       "total_count": 97,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_dequar_deqwl_refs_heads_.txt",
-          "filepath": "configs/raw_githubusercontent_com_dequar_deqwl_refs_heads_.txt",
+          "filename": "raw_githubusercontent_com_dequar_deqwl_refs_heads_.html",
+          "filepath": "configs/raw_githubusercontent_com_dequar_deqwl_refs_heads_.html",
           "count": 97,
           "part": 1
         }
@@ -556,44 +550,44 @@
       "total_count": 1218,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part1.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part1.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part1.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part2.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part2.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part2.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part3.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part3.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part3.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part5.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part5.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part5.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part5.html",
           "count": 200,
           "part": 5
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part6.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part6.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part6.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part6.html",
           "count": 200,
           "part": 6
         },
         {
-          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part7.txt",
-          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part7.txt",
+          "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part7.html",
+          "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part7.html",
           "count": 18,
           "part": 7
         }
@@ -605,8 +599,8 @@
       "total_count": 10,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_mbelspb-gif_gdffgd_refs_.txt",
-          "filepath": "configs/raw_githubusercontent_com_mbelspb-gif_gdffgd_refs_.txt",
+          "filename": "raw_githubusercontent_com_mbelspb-gif_gdffgd_refs_.html",
+          "filepath": "configs/raw_githubusercontent_com_mbelspb-gif_gdffgd_refs_.html",
           "count": 10,
           "part": 1
         }
@@ -618,8 +612,8 @@
       "total_count": 20,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_gooseteam-hackers_GooseV.txt",
-          "filepath": "configs/raw_githubusercontent_com_gooseteam-hackers_GooseV.txt",
+          "filename": "raw_githubusercontent_com_gooseteam-hackers_GooseV.html",
+          "filepath": "configs/raw_githubusercontent_com_gooseteam-hackers_GooseV.html",
           "count": 20,
           "part": 1
         }
@@ -631,8 +625,8 @@
       "total_count": 13,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_gooseteam-hackers_GooseV.txt",
-          "filepath": "configs/raw_githubusercontent_com_gooseteam-hackers_GooseV.txt",
+          "filename": "raw_githubusercontent_com_gooseteam-hackers_GooseV.html",
+          "filepath": "configs/raw_githubusercontent_com_gooseteam-hackers_GooseV.html",
           "count": 13,
           "part": 1
         }
@@ -641,12 +635,12 @@
     {
       "source_url": "https://gitverse.ru/api/repos/272/wl/raw/branch/master/whitelist",
       "friendly_name": "gitverse_ru_api_repos_272_wl_raw_branch_master_whi",
-      "total_count": 30,
+      "total_count": 20,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_272_wl_raw_branch_master_whi.txt",
-          "filepath": "configs/gitverse_ru_api_repos_272_wl_raw_branch_master_whi.txt",
-          "count": 30,
+          "filename": "gitverse_ru_api_repos_272_wl_raw_branch_master_whi.html",
+          "filepath": "configs/gitverse_ru_api_repos_272_wl_raw_branch_master_whi.html",
+          "count": 20,
           "part": 1
         }
       ]
@@ -654,12 +648,12 @@
     {
       "source_url": "https://vpn.akres.fun/bwl",
       "friendly_name": "vpn_akres_fun_bwl",
-      "total_count": 50,
+      "total_count": 32,
       "files": [
         {
-          "filename": "vpn_akres_fun_bwl.txt",
-          "filepath": "configs/vpn_akres_fun_bwl.txt",
-          "count": 50,
+          "filename": "vpn_akres_fun_bwl.html",
+          "filepath": "configs/vpn_akres_fun_bwl.html",
+          "count": 32,
           "part": 1
         }
       ]
@@ -670,8 +664,8 @@
       "total_count": 118,
       "files": [
         {
-          "filename": "tinyurl_com_freesub-scalavpnrobot.txt",
-          "filepath": "configs/tinyurl_com_freesub-scalavpnrobot.txt",
+          "filename": "tinyurl_com_freesub-scalavpnrobot.html",
+          "filepath": "configs/tinyurl_com_freesub-scalavpnrobot.html",
           "count": 118,
           "part": 1
         }
@@ -683,8 +677,8 @@
       "total_count": 9,
       "files": [
         {
-          "filename": "tinyurl_com_Sub1EggAeryx.txt",
-          "filepath": "configs/tinyurl_com_Sub1EggAeryx.txt",
+          "filename": "tinyurl_com_Sub1EggAeryx.html",
+          "filepath": "configs/tinyurl_com_Sub1EggAeryx.html",
           "count": 9,
           "part": 1
         }
@@ -696,8 +690,8 @@
       "total_count": 3,
       "files": [
         {
-          "filename": "tinyurl_com_AeryxVPNyandexua.txt",
-          "filepath": "configs/tinyurl_com_AeryxVPNyandexua.txt",
+          "filename": "tinyurl_com_AeryxVPNyandexua.html",
+          "filepath": "configs/tinyurl_com_AeryxVPNyandexua.html",
           "count": 3,
           "part": 1
         }
@@ -709,8 +703,8 @@
       "total_count": 18,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_kama55726_KomaryServers_.txt",
-          "filepath": "configs/raw_githubusercontent_com_kama55726_KomaryServers_.txt",
+          "filename": "raw_githubusercontent_com_kama55726_KomaryServers_.html",
+          "filepath": "configs/raw_githubusercontent_com_kama55726_KomaryServers_.html",
           "count": 18,
           "part": 1
         }
@@ -722,8 +716,8 @@
       "total_count": 136,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_prominbro_sub_refs_heads.txt",
-          "filepath": "configs/raw_githubusercontent_com_prominbro_sub_refs_heads.txt",
+          "filename": "raw_githubusercontent_com_prominbro_sub_refs_heads.html",
+          "filepath": "configs/raw_githubusercontent_com_prominbro_sub_refs_heads.html",
           "count": 136,
           "part": 1
         }
@@ -735,8 +729,8 @@
       "total_count": 68,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Ilyacom4ik_free-v2ray-20.txt",
-          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_free-v2ray-20.txt",
+          "filename": "raw_githubusercontent_com_Ilyacom4ik_free-v2ray-20.html",
+          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_free-v2ray-20.html",
           "count": 68,
           "part": 1
         }
@@ -748,8 +742,8 @@
       "total_count": 68,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.txt",
-          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.txt",
+          "filename": "raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.html",
+          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.html",
           "count": 68,
           "part": 1
         }
@@ -761,8 +755,8 @@
       "total_count": 28,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.txt",
-          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.txt",
+          "filename": "raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.html",
+          "filepath": "configs/raw_githubusercontent_com_Ilyacom4ik_vpn-keys_refs.html",
           "count": 28,
           "part": 1
         }
@@ -774,8 +768,8 @@
       "total_count": 2,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_mbelspb-gif_bright_refs_.txt",
-          "filepath": "configs/raw_githubusercontent_com_mbelspb-gif_bright_refs_.txt",
+          "filename": "raw_githubusercontent_com_mbelspb-gif_bright_refs_.html",
+          "filepath": "configs/raw_githubusercontent_com_mbelspb-gif_bright_refs_.html",
           "count": 2,
           "part": 1
         }
@@ -787,8 +781,8 @@
       "total_count": 11,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Alex999ooo_VPN-for-Russi.txt",
-          "filepath": "configs/raw_githubusercontent_com_Alex999ooo_VPN-for-Russi.txt",
+          "filename": "raw_githubusercontent_com_Alex999ooo_VPN-for-Russi.html",
+          "filepath": "configs/raw_githubusercontent_com_Alex999ooo_VPN-for-Russi.html",
           "count": 11,
           "part": 1
         }
@@ -800,8 +794,8 @@
       "total_count": 42,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a.txt",
-          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a.txt",
+          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a.html",
+          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a.html",
           "count": 42,
           "part": 1
         }
@@ -813,14 +807,14 @@
       "total_count": 352,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_pidarasuebisov-afk_e220_part1.txt",
-          "filepath": "configs/gist_githubusercontent_com_pidarasuebisov-afk_e220_part1.txt",
+          "filename": "gist_githubusercontent_com_pidarasuebisov-afk_e220_part1.html",
+          "filepath": "configs/gist_githubusercontent_com_pidarasuebisov-afk_e220_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gist_githubusercontent_com_pidarasuebisov-afk_e220_part2.txt",
-          "filepath": "configs/gist_githubusercontent_com_pidarasuebisov-afk_e220_part2.txt",
+          "filename": "gist_githubusercontent_com_pidarasuebisov-afk_e220_part2.html",
+          "filepath": "configs/gist_githubusercontent_com_pidarasuebisov-afk_e220_part2.html",
           "count": 152,
           "part": 2
         }
@@ -832,8 +826,8 @@
       "total_count": 7,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.txt",
-          "filepath": "configs/raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.txt",
+          "filename": "raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.html",
+          "filepath": "configs/raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.html",
           "count": 7,
           "part": 1
         }
@@ -845,8 +839,8 @@
       "total_count": 7,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.txt",
-          "filepath": "configs/raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.txt",
+          "filename": "raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.html",
+          "filepath": "configs/raw_githubusercontent_com_Temnuk_naabuzil_refs_hea.html",
           "count": 7,
           "part": 1
         }
@@ -858,8 +852,8 @@
       "total_count": 19,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_likzil_vless1_refs_heads.txt",
-          "filepath": "configs/raw_githubusercontent_com_likzil_vless1_refs_heads.txt",
+          "filename": "raw_githubusercontent_com_likzil_vless1_refs_heads.html",
+          "filepath": "configs/raw_githubusercontent_com_likzil_vless1_refs_heads.html",
           "count": 19,
           "part": 1
         }
@@ -871,14 +865,14 @@
       "total_count": 280,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a_part1.txt",
-          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a_part1.txt",
+          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a_part1.html",
+          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a_part2.txt",
-          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a_part2.txt",
+          "filename": "gist_githubusercontent_com_nikitavalentinov90021-a_part2.html",
+          "filepath": "configs/gist_githubusercontent_com_nikitavalentinov90021-a_part2.html",
           "count": 80,
           "part": 2
         }
@@ -890,8 +884,8 @@
       "total_count": 32,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_flaafix_c79a81037d15163.txt",
-          "filepath": "configs/gist_githubusercontent_com_flaafix_c79a81037d15163.txt",
+          "filename": "gist_githubusercontent_com_flaafix_c79a81037d15163.html",
+          "filepath": "configs/gist_githubusercontent_com_flaafix_c79a81037d15163.html",
           "count": 32,
           "part": 1
         }
@@ -903,8 +897,8 @@
       "total_count": 66,
       "files": [
         {
-          "filename": "gist_githubusercontent_com_VSPBOOST_d84dcf89bf3101.txt",
-          "filepath": "configs/gist_githubusercontent_com_VSPBOOST_d84dcf89bf3101.txt",
+          "filename": "gist_githubusercontent_com_VSPBOOST_d84dcf89bf3101.html",
+          "filepath": "configs/gist_githubusercontent_com_VSPBOOST_d84dcf89bf3101.html",
           "count": 66,
           "part": 1
         }
@@ -916,44 +910,44 @@
       "total_count": 1226,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part1.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part1.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part1.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part2.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part2.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part2.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part3.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part3.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part3.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part4.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part4.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part4.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part5.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part5.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part5.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part5.html",
           "count": 200,
           "part": 5
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part6.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part6.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part6.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part6.html",
           "count": 200,
           "part": 6
         },
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part7.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part7.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part7.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw__part7.html",
           "count": 26,
           "part": 7
         }
@@ -965,8 +959,8 @@
       "total_count": 4,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_stanislavPLS_AuraChannel.txt",
-          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_AuraChannel.txt",
+          "filename": "raw_githubusercontent_com_stanislavPLS_AuraChannel.html",
+          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_AuraChannel.html",
           "count": 4,
           "part": 1
         }
@@ -978,8 +972,8 @@
       "total_count": 15,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_dmitriistekolnikov_Free_.txt",
-          "filepath": "configs/raw_githubusercontent_com_dmitriistekolnikov_Free_.txt",
+          "filename": "raw_githubusercontent_com_dmitriistekolnikov_Free_.html",
+          "filepath": "configs/raw_githubusercontent_com_dmitriistekolnikov_Free_.html",
           "count": 15,
           "part": 1
         }
@@ -991,8 +985,8 @@
       "total_count": 46,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_55prosek-lgtm_vpn_config.txt",
-          "filepath": "configs/raw_githubusercontent_com_55prosek-lgtm_vpn_config.txt",
+          "filename": "raw_githubusercontent_com_55prosek-lgtm_vpn_config.html",
+          "filepath": "configs/raw_githubusercontent_com_55prosek-lgtm_vpn_config.html",
           "count": 46,
           "part": 1
         }
@@ -1004,8 +998,8 @@
       "total_count": 11,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_stanislavPLS_AuraChannel.txt",
-          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_AuraChannel.txt",
+          "filename": "raw_githubusercontent_com_stanislavPLS_AuraChannel.html",
+          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_AuraChannel.html",
           "count": 11,
           "part": 1
         }
@@ -1017,8 +1011,8 @@
       "total_count": 10,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_stanislavPLS_GMVPN-users.txt",
-          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_GMVPN-users.txt",
+          "filename": "raw_githubusercontent_com_stanislavPLS_GMVPN-users.html",
+          "filepath": "configs/raw_githubusercontent_com_stanislavPLS_GMVPN-users.html",
           "count": 10,
           "part": 1
         }
@@ -1030,8 +1024,8 @@
       "total_count": 141,
       "files": [
         {
-          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw_.txt",
-          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw_.txt",
+          "filename": "gitverse_ru_api_repos_cid-uskoritel_cid-white_raw_.html",
+          "filepath": "configs/gitverse_ru_api_repos_cid-uskoritel_cid-white_raw_.html",
           "count": 141,
           "part": 1
         }
@@ -1043,8 +1037,8 @@
       "total_count": 12,
       "files": [
         {
-          "filename": "github_com_kama55726_KomaryServers_blob_main_White.txt",
-          "filepath": "configs/github_com_kama55726_KomaryServers_blob_main_White.txt",
+          "filename": "github_com_kama55726_KomaryServers_blob_main_White.html",
+          "filepath": "configs/github_com_kama55726_KomaryServers_blob_main_White.html",
           "count": 12,
           "part": 1
         }
@@ -1056,8 +1050,8 @@
       "total_count": 16,
       "files": [
         {
-          "filename": "144_31_165_198_8080_premium.txt",
-          "filepath": "configs/144_31_165_198_8080_premium.txt",
+          "filename": "144_31_165_198_8080_premium.html",
+          "filepath": "configs/144_31_165_198_8080_premium.html",
           "count": 16,
           "part": 1
         }
@@ -1066,12 +1060,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt",
       "friendly_name": "raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa",
-      "total_count": 35,
+      "total_count": 29,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.txt",
-          "filepath": "configs/raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.txt",
-          "count": 35,
+          "filename": "raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.html",
+          "filepath": "configs/raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.html",
+          "count": 29,
           "part": 1
         }
       ]

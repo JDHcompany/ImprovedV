@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍟 ImprovedVPN — Подписка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        .card-blur {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-xl w-full mx-auto px-4 py-16 z-10 my-auto">
+        <div class="card-blur p-8 rounded-3xl glow-effect text-center border border-amber-500/20">
+            <div class="inline-flex items-center justify-center p-3 bg-amber-500/10 rounded-2xl mb-6">
+                <span class="text-4xl">🍟</span>
+            </div>
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+                ImprovedVPN
+            </h1>
+            <p class="text-sm text-gray-400 mt-2">Ваша персональная подписка готова к работе!</p>
+            
+            <div class="my-6 p-4 bg-gray-950/50 rounded-2xl border border-gray-800 text-left">
+                <div class="text-xs text-gray-500">Имя подписки:</div>
+                <div class="text-base font-bold text-white mt-1">🍟 Improved-potato</div>
+                <div class="text-xs text-gray-500 mt-3">Количество конфигураций в файле:</div>
+                <div class="text-base font-bold text-amber-400 mt-1">32 шт</div>
+            </div>
+
+            <button onclick="copyCurrentUrl()" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 transform hover:scale-[1.02]">
+                <i data-lucide="copy" class="w-5 h-5"></i>
+                Скопировать ссылку на подписку
+            </button>
+
+            <a href="https://t.me/freevpnconf_bot" target="_blank" class="mt-4 w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-bold py-3.5 px-6 rounded-xl transition duration-200 border border-gray-800">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+                Наш Telegram-бот
+            </a>
+        </div>
+    </div>
+
+    <!-- Всплывающий тост -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
+        <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <div class="font-bold text-sm">Ссылка скопирована!</div>
+            <div class="text-xs text-gray-400 mt-0.5">Добавьте ее в Nekobox или Happ</div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function copyCurrentUrl() {
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+
+    <!-- СКРЫТЫЙ БЛОК ДЛЯ VPN КЛИЕНТОВ (ОНИ СЧИТАЮТ ТОЛЬКО ЭТО) -->
+    <!--
+    # profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot
+# profile-update-interval: 1
+# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800
+# support-url: https://t.me/freevpnconf_bot
+# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot
+
+trojan://8r%3C%5B9%27l6hAO%238ZQi@92.118.169.5:8443?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B1%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@212.34.155.81:2053?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B2%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@35.156.76.43:8443?path=%2F%3Fhttps%3A%2F%2Ft.me%2Fyoutube%40ZYFXS%F0%9F%87%A8%F0%9F%87%B3&security=tls&encryption=none&insecure=0&host=sni.latonyamadeline.ndjp.net&type=ws&allowInsecure=0&sni=sni.latonyamadeline.ndjp.net#%F0%9F%8D%9FImproved-potato%20%5B3%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@31.59.121.199:2053?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B4%5D
+vless://fc625795-792d-4d9d-9d38-bffe59467d2d@104.18.2.108:8443?path=%2F&security=tls&encryption=none&insecure=0&host=daluan.eu.org&type=ws&allowInsecure=0&sni=daluan.eu.org#%F0%9F%8D%9FImproved-potato%20%5B5%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@89.168.68.57:2053?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&encryption=none&insecure=0&host=sni.111000.v6.navy&type=ws&allowInsecure=0&sni=sni.111000.v6.navy#%F0%9F%8D%9FImproved-potato%20%5B6%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@94.156.180.215:8443?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&fp=chrome&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B7%5D
+vless://b43a13be-150c-4a6a-8501-b71c1b6476fb@srv191.towersflowerss.com:65000?path=%2F&security=&encryption=none&fp=randomized&type=ws#%F0%9F%8D%9FImproved-potato%20%5B8%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpha01LTzlLWG93eEZjeDVB@20.87.107.99:443#%F0%9F%8D%9FImproved-potato%20%5B9%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@167.68.42.191:2096?path=%2F&security=tls&encryption=none&insecure=0&host=sni.my111000.tech&fp=chrome&type=ws&allowInsecure=0&sni=sni.my111000.tech#%F0%9F%8D%9FImproved-potato%20%5B10%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@199.34.228.160:443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.navy&type=ws&allowInsecure=1&sni=sni.111000.v6.navy#%F0%9F%8D%9FImproved-potato%20%5B11%5D
+vless://b43a13be-150c-4a6a-8501-b71c1b6476fb@tr1.datatowers.net:64534?security=&encryption=none&headerType=none&fp=qq&type=tcp#%F0%9F%8D%9FImproved-potato%20%5B12%5D
+vless://bafacd98-136a-4530-838d-4e5c51838dac@129.159.119.161:443?path=%2Fzh-cn%2Fjuzibaipiao%3Fed&security=tls&encryption=none&insecure=0&host=juzi8186.qea.ccwu.cc&fp=chrome&ech=encryptedsni.com%2Bhttps%3A%2F%2Fdns.alidns.com%2Fdns-query&type=ws&allowInsecure=0&sni=juzi8186.qea.ccwu.cc#%F0%9F%8D%9FImproved-potato%20%5B13%5D
+vless://15efeadc-234a-4642-89b1-e34210e51758@82.22.41.0:59999?security=reality&encryption=none&pbk=x0t1otRGBv62aJKGNbsQRJGtwh-sp6CEScFS6S8y3EM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yastatic.net&sid=0f1e2d3c#%F0%9F%8D%9FImproved-potato%20%5B14%5D
+vless://e502ee54-8e2a-41c6-a3ca-3d192e8710fb@95.85.242.45:443?path=%2Fsequre%2Fws%3Fed%3D2560&security=tls&alpn=http%2F1.1&encryption=none&insecure=1&host=cloudflare.vhub.pro&fp=chrome&type=ws&allowInsecure=1&sni=cloudflare.vhub.pro#%F0%9F%8D%9FImproved-potato%20%5B15%5D
+vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=%2Fvless%2F&security=&encryption=none&type=ws#%F0%9F%8D%9FImproved-potato%20%5B16%5D
+vless://613ec6b1-be75-487d-a5e9-713471a2a2da@f-eu3.powerhost.pro:443?path=%2F&security=reality&encryption=none&pbk=KNJVnH7B-1BAb9z5DW9vgQ_XHMGdEop0_WzbfhXFoHI&fp=chrome&type=xhttp&sni=sun6-21.userapi.com&sid=a60d3a8e9039648f#%F0%9F%8D%9FImproved-potato%20%5B17%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@217.163.76.46:443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.navy&fp=chrome&type=ws&allowInsecure=1&sni=sni.111000.v6.navy#%F0%9F%8D%9FImproved-potato%20%5B18%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@45.40.152.191:2096?security=tls&encryption=none&insecure=1&host=sni.my111000.tech&type=ws&allowInsecure=1&sni=sni.my111000.tech#%F0%9F%8D%9FImproved-potato%20%5B19%5D
+vless://e2e1ddaa-1acf-4c4c-a211-92284f6440ed@5.255.110.147:443?security=reality&encryption=none&pbk=AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=nll.scroogethebest.com&sid=4fa44664f6a566d3#%F0%9F%8D%9FImproved-potato%20%5B20%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@31.56.204.254:8443?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#%F0%9F%8D%9FImproved-potato%20%5B21%5D
+vless://ae0dd58e-e222-40bf-84ae-365a97532737@malaysia.com:443?path=%2Fsetting%2Ftorrent%2Ftask&security=tls&encryption=none&insecure=1&host=pagescm.freen35.cc.cd&type=ws&allowInsecure=1&sni=pagescm.freen35.cc.cd#%F0%9F%8D%9FImproved-potato%20%5B22%5D
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@135.84.73.9:443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.navy&type=ws&allowInsecure=1&sni=sni.111000.v6.navy#%F0%9F%8D%9FImproved-potato%20%5B23%5D
+vless://35325a3c-411e-42a8-962b-db12e55b071d@87.120.126.187:2027?security=reality&encryption=none&pbk=EApxy12MeXpqt-78odxizwcXT6hX9f8XeAcbMDVRAV0&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=de.skysafe.online&sid=6ba7b8109dad11d1#%F0%9F%8D%9FImproved-potato%20%5B24%5D
+vless://690cff03-0a82-457a-8532-4a83491458fb@pl.synatra.net:58730?security=reality&encryption=none&pbk=_-lR8xvn-qaERi-M1iCn6ftH7ChnT0qHHq2GAiROmXA&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dropbox.com#%F0%9F%8D%9FImproved-potato%20%5B25%5D
+trojan://8r%3C%5B9%27l6hAO%238ZQi@77.42.39.108:8443?path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2&security=tls&insecure=0&host=Koma-YT.PAGES.Dev&fp=chrome&type=ws&allowInsecure=0&sni=Koma-YT.PAGES.Dev#%F0%9F%8D%9FImproved-potato%20%5B26%5D
+vless://e502ee54-8e2a-41c6-a3ca-3d192e8710fb@95.85.246.16:573?security=tls&alpn=h2&encryption=none&insecure=0&fp=safari&type=grpc&serviceName=%2Fsequre%2Fgrpc%2F&allowInsecure=0&sni=95.85.246.16.speed-storage.ru#%F0%9F%8D%9FImproved-potato%20%5B27%5D
+vless://info@0.0.0.0:443?type=tcp&security=none#%F0%9F%8D%9FImproved-potato%20%5B28%5D
+vless://e502ee54-8e2a-41c6-a3ca-3d192e8710fb@84.201.4.209:443?path=%2Fsequre%2Fws%3Fed%3D2560&security=tls&alpn=http%2F1.1&encryption=none&insecure=1&host=cloudflare.vhub.pro&fp=chrome&type=ws&allowInsecure=1&sni=cloudflare.vhub.pro#%F0%9F%8D%9FImproved-potato%20%5B29%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkN3poMmxNclhOSDUrOCs4cEt6bHhpQ1U5Tk4wMjJpaCt1QXl4ajVkNHFvPQ@102.129.229.85:31700#%F0%9F%8D%9FImproved-potato%20%5B30%5D
+vless://ae0dd58e-e222-40bf-84ae-365a97532737@store.ubi.com:443?path=%2Fproducts&security=tls&encryption=none&insecure=0&host=pagescm.freen8.de5.net&fp=chrome&type=ws&allowInsecure=0&sni=pagescm.freen8.de5.net#%F0%9F%8D%9FImproved-potato%20%5B31%5D
+vless://33cd4eed-ea41-4a9b-b12e-78fcb1b95db8@95.85.246.14.speed-storage.ru:573?security=tls&alpn=h2&encryption=none&insecure=0&fp=safari&type=grpc&serviceName=%2Fsequre%2Fgrpc%2F&allowInsecure=0&sni=95.85.246.14.speed-storage.ru#%F0%9F%8D%9FImproved-potato%20%5B32%5D
+    -->
+</body>
+</html>

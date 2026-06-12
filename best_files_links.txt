@@ -1,5 +1,5 @@
 # Прямые ссылки на лучшие конфигурации
 
 ## RAW GitHub ссылки:
-https://raw.githubusercontent.com/JDHcompany/ImprovedV/main/configs/best_1.txt
-https://raw.githubusercontent.com/JDHcompany/ImprovedV/main/configs/best_2.txt
+https://raw.githubusercontent.com/JDHcompany/ImprovedV/main/configs/best_1.html
+https://raw.githubusercontent.com/JDHcompany/ImprovedV/main/configs/best_2.html
