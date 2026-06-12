@@ -174,15 +174,15 @@ def check_all_configs_parallel(all_configs):
 def generate_hybrid_html(configs, filename_display, start_index=1):
     """
     Генерирует гибридный HTML-файл.
-    При запуске в браузере он рендерит красивую страницу подписки.
-    При чтении клиентом Happ — отдает только чистые конфиги из скрытого блока.
+    Помещает конфигурации и метаданные в самый верх файла внутри HTML-комментария,
+    чтобы VPN-клиенты гарантированно парсили метаданные, а браузеры игнорировали их.
     """
     metadata_lines = [
-        "# profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot",
+        "# profile-title: 🍟 Improved-potato | @freevpnconf_bot",
         "# profile-update-interval: 1",
         "# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800",
         "# support-url: https://t.me/freevpnconf_bot",
-        "# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot",
+        "# announce: Больше конфигураций в нашем Telegram-боте: https://t.me/freevpnconf_bot",
         ""
     ]
     
@@ -195,8 +195,11 @@ def generate_hybrid_html(configs, filename_display, start_index=1):
         
     plain_configs = "\n".join(metadata_lines + processed_configs)
     
-    # HTML-шаблон, который рендерит полноценный сайт прямо на этом же URL
-    html_content = f"""<!DOCTYPE html>
+    # HTML-шаблон с метаданными и конфигурациями на ПЕРВЫХ строках
+    html_content = f"""<!--
+{plain_configs}
+-->
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -205,7 +208,7 @@ def generate_hybrid_html(configs, filename_display, start_index=1):
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap');
         body {{
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0f19;
@@ -283,11 +286,6 @@ def generate_hybrid_html(configs, filename_display, start_index=1):
             }}, 3000);
         }}
     </script>
-
-    <!-- СКРЫТЫЙ БЛОК ДЛЯ VPN КЛИЕНТОВ (ОНИ СЧИТАЮТ ТОЛЬКО ЭТО) -->
-    <!--
-    {plain_configs}
-    -->
 </body>
 </html>"""
     return html_content
@@ -411,7 +409,7 @@ def fetch_and_save():
     
     with open(MANIFEST_FILE, 'w', encoding='utf-8') as mf:
         json.dump(manifest_data, mf, ensure_ascii=False, indent=2)
-    print(f"Манифест сохранен in {MANIFEST_FILE}")
+    print(f"Манифест сохранен в {MANIFEST_FILE}")
 
     # Формируем ссылки с использованием домена GitHub Pages
     github_repository = os.environ.get("GITHUB_REPOSITORY", "USER/REPO")
@@ -427,7 +425,6 @@ def fetch_and_save():
             link_file.write("# Эти ссылки красивыми сайтами открываются в браузере и импортируются в VPN!\n\n")
             link_file.write("## Ссылки для Nekobox / Happ / Browser:\n")
             for path in best_file_paths:
-                # Нормализуем путь для URL (заменяем обратные слэши на прямые, если запускается в Windows)
                 normalized_path = path.replace("\\", "/")
                 link_file.write(f"{pages_url_base}/{normalized_path}\n")
     except Exception as e:
