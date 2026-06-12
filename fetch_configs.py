@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.error import URLError, HTTPError
 
 # ==================== НАСТРОЙКИ БРЕНДА ====================
-# Ссылка на вашего Telegram-бота (используется для сайта)
+# Ссылка на вашего Telegram-бота (используется для отображения на сайте)
 TG_CHANNEL_LINK = "https://t.me/freevpnconf_bot"
 # ==========================================================
 
@@ -171,10 +171,14 @@ def check_all_configs_parallel(all_configs):
     valid_configs.sort(key=lambda x: x[1])
     return [item[0] for item in valid_configs]
 
-def generate_file_content(configs, start_index=1):
-    """Создает содержимое файла со строгими метаданными профиля подписки."""
-    header_lines = [
-        "# profile-title: 🍟improvedVPN",
+def generate_hybrid_html(configs, filename_display, start_index=1):
+    """
+    Генерирует гибридный HTML-файл.
+    При запуске в браузере он рендерит красивую страницу подписки.
+    При чтении клиентом Happ — отдает только чистые конфиги из скрытого блока.
+    """
+    metadata_lines = [
+        "# profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot",
         "# profile-update-interval: 1",
         "# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800",
         "# support-url: https://t.me/freevpnconf_bot",
@@ -189,8 +193,104 @@ def generate_file_content(configs, start_index=1):
         renamed = rename_config(config, new_name)
         processed_configs.append(renamed)
         
-    full_content = "\n".join(header_lines + processed_configs) + "\n"
-    return full_content
+    plain_configs = "\n".join(metadata_lines + processed_configs)
+    
+    # HTML-шаблон, который рендерит полноценный сайт прямо на этом же URL
+    html_content = f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍟 ImprovedVPN — Подписка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {{
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }}
+        .glow-effect {{
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }}
+        .card-blur {{
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }}
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-xl w-full mx-auto px-4 py-16 z-10 my-auto">
+        <div class="card-blur p-8 rounded-3xl glow-effect text-center border border-amber-500/20">
+            <div class="inline-flex items-center justify-center p-3 bg-amber-500/10 rounded-2xl mb-6">
+                <span class="text-4xl">🍟</span>
+            </div>
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+                ImprovedVPN
+            </h1>
+            <p class="text-sm text-gray-400 mt-2">Ваша персональная подписка готова к работе!</p>
+            
+            <div class="my-6 p-4 bg-gray-950/50 rounded-2xl border border-gray-800 text-left">
+                <div class="text-xs text-gray-500">Имя подписки:</div>
+                <div class="text-base font-bold text-white mt-1">🍟 Improved-potato</div>
+                <div class="text-xs text-gray-500 mt-3">Количество конфигураций в файле:</div>
+                <div class="text-base font-bold text-amber-400 mt-1">{len(processed_configs)} шт</div>
+            </div>
+
+            <button onclick="copyCurrentUrl()" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold py-3.5 px-6 rounded-xl transition duration-200 transform hover:scale-[1.02]">
+                <i data-lucide="copy" class="w-5 h-5"></i>
+                Скопировать ссылку на подписку
+            </button>
+
+            <a href="{TG_CHANNEL_LINK}" target="_blank" class="mt-4 w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-300 font-bold py-3.5 px-6 rounded-xl transition duration-200 border border-gray-800">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+                Наш Telegram-бот
+            </a>
+        </div>
+    </div>
+
+    <!-- Всплывающий тост -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-gray-950 text-white border border-green-500/30 px-5 py-4 rounded-2xl shadow-2xl">
+        <div class="p-1 bg-green-500/20 text-green-400 rounded-lg">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <div class="font-bold text-sm">Ссылка скопирована!</div>
+            <div class="text-xs text-gray-400 mt-0.5">Добавьте ее в Nekobox или Happ</div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function copyCurrentUrl() {{
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {{
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }}, 3000);
+        }}
+    </script>
+
+    <!-- СКРЫТЫЙ БЛОК ДЛЯ VPN КЛИЕНТОВ (ОНИ СЧИТАЮТ ТОЛЬКО ЭТО) -->
+    <!--
+    {plain_configs}
+    -->
+</body>
+</html>"""
+    return html_content
 
 def fetch_and_save():
     if not os.path.exists(OUTPUT_DIR):
@@ -235,15 +335,14 @@ def fetch_and_save():
             
         all_gathered_configs.extend(configs)
 
-        # Сохраняем все сырые файлы частями по 200 штук
         part = 1
         source_files = []
         for i in range(0, total_configs, MAX_CONFIGS_PER_FILE):
             chunk = configs[i:i + MAX_CONFIGS_PER_FILE]
-            filename = f"{base_name}.txt" if total_configs <= MAX_CONFIGS_PER_FILE else f"{base_name}_part{part}.txt"
+            filename = f"{base_name}.html" if total_configs <= MAX_CONFIGS_PER_FILE else f"{base_name}_part{part}.html"
             filepath = os.path.join(OUTPUT_DIR, filename)
             
-            file_content = generate_file_content(chunk, start_index=1)
+            file_content = generate_hybrid_html(chunk, f"improved-potato-part{part}", start_index=1)
             with open(filepath, 'w', encoding='utf-8') as out_file:
                 out_file.write(file_content)
                 
@@ -269,21 +368,20 @@ def fetch_and_save():
     best_manifest_files = []
 
     if unique_gathered_configs:
-        # 2. Быстрая проверка лучших по TCP
         best_sorted_configs = check_all_configs_parallel(unique_gathered_configs)
 
         if best_sorted_configs:
             # Файл 1: Топ 1-200 лучших
             best_1_chunk = best_sorted_configs[0:MAX_CONFIGS_PER_FILE]
             if best_1_chunk:
-                path_1 = os.path.join(OUTPUT_DIR, "best_1.txt")
-                file_content_1 = generate_file_content(best_1_chunk, start_index=1)
+                path_1 = os.path.join(OUTPUT_DIR, "best_1.html")
+                file_content_1 = generate_hybrid_html(best_1_chunk, "best_1", start_index=1)
                 with open(path_1, 'w', encoding='utf-8') as f:
                     f.write(file_content_1)
                 best_file_paths.append(path_1)
                 best_manifest_files.append({
                     "name": "🔥 Лучшие прокси — Часть 1",
-                    "filepath": "configs/best_1.txt",
+                    "filepath": "configs/best_1.html",
                     "count": len(best_1_chunk),
                     "description": "Самые быстрые проверенные серверы (топ 1-200 по пингу)."
                 })
@@ -291,14 +389,14 @@ def fetch_and_save():
             # Файл 2: Топ 201-400 лучших
             best_2_chunk = best_sorted_configs[MAX_CONFIGS_PER_FILE:MAX_CONFIGS_PER_FILE * 2]
             if best_2_chunk:
-                path_2 = os.path.join(OUTPUT_DIR, "best_2.txt")
-                file_content_2 = generate_file_content(best_2_chunk, start_index=201)
+                path_2 = os.path.join(OUTPUT_DIR, "best_2.html")
+                file_content_2 = generate_hybrid_html(best_2_chunk, "best_2", start_index=201)
                 with open(path_2, 'w', encoding='utf-8') as f:
                     f.write(file_content_2)
                 best_file_paths.append(path_2)
                 best_manifest_files.append({
                     "name": "⚡ Резервные прокси — Часть 2",
-                    "filepath": "configs/best_2.txt",
+                    "filepath": "configs/best_2.html",
                     "count": len(best_2_chunk),
                     "description": "Дополнительный пул качественных серверов (топ 201-400)."
                 })
@@ -313,9 +411,9 @@ def fetch_and_save():
     
     with open(MANIFEST_FILE, 'w', encoding='utf-8') as mf:
         json.dump(manifest_data, mf, ensure_ascii=False, indent=2)
-    print(f"Манифест сохранен в {MANIFEST_FILE}")
+    print(f"Манифест сохранен in {MANIFEST_FILE}")
 
-    # 4. Запись текстовых ссылок на лучшие файлы (для обратной совместимости)
+    # Запись ссылок
     github_repository = os.environ.get("GITHUB_REPOSITORY", "USER/REPO")
     raw_url_base = f"https://raw.githubusercontent.com/{github_repository}/main"
     
