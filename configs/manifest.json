@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-06-12 06:45:16 UTC",
-  "telegram": "https://t.me/your_telegram_channel",
+  "last_updated": "2026-06-12 06:53:25 UTC",
+  "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
-      "name": "🔥 Лучшие прокси — Часть 1 (Топ 1-200)",
+      "name": "🔥 Лучшие прокси — Часть 1",
       "filepath": "configs/best_1.txt",
       "count": 200,
-      "description": "Самые быстрые серверы с наименьшей задержкой отклика по результатам TCP-теста."
+      "description": "Самые быстрые проверенные серверы (топ 1-200 по пингу)."
     },
     {
-      "name": "⚡ Резервные прокси — Часть 2 (Топ 201-400)",
+      "name": "⚡ Резервные прокси — Часть 2",
       "filepath": "configs/best_2.txt",
       "count": 200,
-      "description": "Надежный дополнительный пул проверенных прокси-серверов."
+      "description": "Дополнительный пул качественных серверов (топ 201-400)."
     }
   ],
   "sources": [

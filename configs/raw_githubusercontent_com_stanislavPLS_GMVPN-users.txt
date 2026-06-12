@@ -1,15 +1,16 @@
-# Название: 🍟ImprovedVPN
-# Безлимит пользования без ограничений
-# Описание : Мой ТГК - https://t.me/your_telegram_channel
-# ссылка на канал : https://t.me/your_telegram_channel
+# profile-title: 💩improved-potatoVPN🍀|TG @freevpncons_bot
+# profile-update-interval: 1
+# subscription-userinfo: upload=9999999999999999999; download=0; total=9999999999999999999; expire=4102444800
+# support-url: https://t.me/freevpnconf_bot
+# announce: Больше конфигов в моем ТГ боте- https://t.me/freevpnconf_bot
 
 vless://6d77abcb-007b-47e9-95ca-ae974fc67c41@217.16.29.11:443?mode=auto&path=%2Fapi%2Fv2%2F&security=tls&encryption=none&fp=random&allowinsecure=0&type=xhttp&sni=bonus00-01.uiu.fyi#%F0%9F%8D%9FImproved-potato%20%5B1%5D
-vless://40cb7563-63b1-44ce-9680-4e21fc439300@ru03.myxavpn.com:443?encryption=none&security=reality&flow=xtls-rprx-vision&sni=ru03.myxavpn.com&fp=chrome&pbk=OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw&sid=d67ec5a8fc40ebea&type=tcp#%F0%9F%8D%9FImproved-potato%20%5B2%5D
-vless://3fddfb48-3af8-4f6a-ab42-9c07c4685e87@5.188.143.151:443?mode=stream-one&path=%2Fapi%2Fv2%2Fupdates&security=reality&encryption=none&pbk=e2o6WYXoGiY1nvdVPtQwTpwmxVhrTAH25_6rXztNJFQ&fp=qq&allowinsecure=0&type=xhttp&sni=ads.x5.ru&sid=a1b2c3d4e5f6#%F0%9F%8D%9FImproved-potato%20%5B3%5D
-vless://b6ce8a51-19b9-4979-91ba-b4298c26d5fc@89.208.230.199:8443?security=reality&encryption=none&pbk=mAu8QDi3pbmMCFg9kKC-ZBIHdtnXeCuZt3VnAw6vlH4&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=ad7dab462a323acb#%F0%9F%8D%9FImproved-potato%20%5B4%5D
+vless://3fddfb48-3af8-4f6a-ab42-9c07c4685e87@5.188.143.151:443?mode=stream-one&path=%2Fapi%2Fv2%2Fupdates&security=reality&encryption=none&pbk=e2o6WYXoGiY1nvdVPtQwTpwmxVhrTAH25_6rXztNJFQ&fp=qq&allowinsecure=0&type=xhttp&sni=ads.x5.ru&sid=a1b2c3d4e5f6#%F0%9F%8D%9FImproved-potato%20%5B2%5D
+vless://a88ea8bf-7001-4e29-a9bb-379f6778195c@free.nexyonn.com:443?security=reality&encryption=none&alpn=http%25252525252525252525252525252525252F1.1&pbk=iNnoaSfyKvdo5kp5znHSGFNqFxNhS0ormvHHHwsUSTM&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=0123456789abcdef#%F0%9F%8D%9FImproved-potato%20%5B3%5D
+vless://68a41daa-e7dd-4ca3-a98d-7fde8c467719@217.16.21.70:443?mode=auto&path=%2Fapi%2Fv2%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&allowinsecure=0&type=xhttp&sni=bonus20-01.uiu.fyi#%F0%9F%8D%9FImproved-potato%20%5B4%5D
 vless://3fddfb48-3af8-4f6a-ab42-9c07c4685e87@5.188.143.151:443?mode=stream-one&path=%2Fapi%2Fv2%2Fupdates&security=reality&encryption=none&pbk=e2o6WYXoGiY1nvdVPtQwTpwmxVhrTAH25_6rXztNJFQ&fp=qq&allowinsecure=0&type=xhttp&sni=ads.x5.ru&sid=a1b2c3d4e5f6#%F0%9F%8D%9FImproved-potato%20%5B5%5D
-vless://119a2ebd-a026-4647-a22b-cc02bdb74f45@5.188.115.230:443?mode=gun&security=reality&encryption=none&authority=&pbk=EC3wOGb2DaO1WKlcB-00bIU7oH573aI9Xww_3x5DUTs&fp=random&allowinsecure=0&type=grpc&serviceName=&sni=5post-gate.x5.ru&sid=3da16894f6a521b2#%F0%9F%8D%9FImproved-potato%20%5B6%5D
-vless://6d77abcb-007b-47e9-95ca-ae974fc67c41@217.16.29.11:443?mode=auto&path=%2Fapi%2Fv2%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&allowinsecure=0&type=xhttp&sni=bonus00-01.uiu.fyi#%F0%9F%8D%9FImproved-potato%20%5B7%5D
-vless://a88ea8bf-7001-4e29-a9bb-379f6778195c@free.nexyonn.com:443?security=reality&encryption=none&alpn=http%25252525252525252525252525252525252F1.1&pbk=iNnoaSfyKvdo5kp5znHSGFNqFxNhS0ormvHHHwsUSTM&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=0123456789abcdef#%F0%9F%8D%9FImproved-potato%20%5B8%5D
-vless://68a41daa-e7dd-4ca3-a98d-7fde8c467719@217.16.21.70:443?mode=auto&path=%2Fapi%2Fv2%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&allowinsecure=0&type=xhttp&sni=bonus20-01.uiu.fyi#%F0%9F%8D%9FImproved-potato%20%5B9%5D
-vless://40cb7563-63b1-44ce-9680-4e21fc439300@ru08.myxavpn.com:443?encryption=none&security=reality&flow=xtls-rprx-vision&sni=ru08.myxavpn.com&fp=chrome&pbk=OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw&sid=d67ec5a8fc40ebea&type=tcp#%F0%9F%8D%9FImproved-potato%20%5B10%5D
+vless://b6ce8a51-19b9-4979-91ba-b4298c26d5fc@89.208.230.199:8443?security=reality&encryption=none&pbk=mAu8QDi3pbmMCFg9kKC-ZBIHdtnXeCuZt3VnAw6vlH4&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=ad7dab462a323acb#%F0%9F%8D%9FImproved-potato%20%5B6%5D
+vless://40cb7563-63b1-44ce-9680-4e21fc439300@ru08.myxavpn.com:443?encryption=none&security=reality&flow=xtls-rprx-vision&sni=ru08.myxavpn.com&fp=chrome&pbk=OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw&sid=d67ec5a8fc40ebea&type=tcp#%F0%9F%8D%9FImproved-potato%20%5B7%5D
+vless://40cb7563-63b1-44ce-9680-4e21fc439300@ru03.myxavpn.com:443?encryption=none&security=reality&flow=xtls-rprx-vision&sni=ru03.myxavpn.com&fp=chrome&pbk=OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw&sid=d67ec5a8fc40ebea&type=tcp#%F0%9F%8D%9FImproved-potato%20%5B8%5D
+vless://119a2ebd-a026-4647-a22b-cc02bdb74f45@5.188.115.230:443?mode=gun&security=reality&encryption=none&authority=&pbk=EC3wOGb2DaO1WKlcB-00bIU7oH573aI9Xww_3x5DUTs&fp=random&allowinsecure=0&type=grpc&serviceName=&sni=5post-gate.x5.ru&sid=3da16894f6a521b2#%F0%9F%8D%9FImproved-potato%20%5B9%5D
+vless://6d77abcb-007b-47e9-95ca-ae974fc67c41@217.16.29.11:443?mode=auto&path=%2Fapi%2Fv2%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&allowinsecure=0&type=xhttp&sni=bonus00-01.uiu.fyi#%F0%9F%8D%9FImproved-potato%20%5B10%5D
