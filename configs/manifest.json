@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-12 17:38:48 UTC",
+  "last_updated": "2026-06-12 23:04:32 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -303,12 +303,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
       "friendly_name": "raw_githubusercontent_com_igareck_vpn-configs-for-",
-      "total_count": 11,
+      "total_count": 14,
       "files": [
         {
           "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
-          "count": 11,
+          "count": 14,
           "part": 1
         }
       ]
@@ -316,12 +316,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt",
       "friendly_name": "raw_githubusercontent_com_igareck_vpn-configs-for-",
-      "total_count": 19,
+      "total_count": 84,
       "files": [
         {
           "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
-          "count": 19,
+          "count": 84,
           "part": 1
         }
       ]
@@ -329,12 +329,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "friendly_name": "raw_githubusercontent_com_igareck_vpn-configs-for-",
-      "total_count": 19,
+      "total_count": 84,
       "files": [
         {
           "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
-          "count": 19,
+          "count": 84,
           "part": 1
         }
       ]
@@ -342,12 +342,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
       "friendly_name": "raw_githubusercontent_com_igareck_vpn-configs-for-",
-      "total_count": 3,
+      "total_count": 34,
       "files": [
         {
           "filename": "raw_githubusercontent_com_igareck_vpn-configs-for-.html",
           "filepath": "configs/raw_githubusercontent_com_igareck_vpn-configs-for-.html",
-          "count": 3,
+          "count": 34,
           "part": 1
         }
       ]
@@ -392,12 +392,12 @@
     {
       "source_url": "https://subrostunnel.vercel.app/gen.txt",
       "friendly_name": "subrostunnel_vercel_app_gen_txt",
-      "total_count": 88,
+      "total_count": 177,
       "files": [
         {
           "filename": "subrostunnel_vercel_app_gen_txt.html",
           "filepath": "configs/subrostunnel_vercel_app_gen_txt.html",
-          "count": 88,
+          "count": 177,
           "part": 1
         }
       ]
@@ -405,12 +405,12 @@
     {
       "source_url": "https://etoneya.su/whitelist",
       "friendly_name": "etoneya_su_whitelist",
-      "total_count": 56,
+      "total_count": 64,
       "files": [
         {
           "filename": "etoneya_su_whitelist.html",
           "filepath": "configs/etoneya_su_whitelist.html",
-          "count": 56,
+          "count": 64,
           "part": 1
         }
       ]
@@ -418,12 +418,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-all.txt",
       "friendly_name": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi",
-      "total_count": 46,
+      "total_count": 83,
       "files": [
         {
           "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
-          "count": 46,
+          "count": 83,
           "part": 1
         }
       ]
@@ -431,12 +431,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "friendly_name": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi",
-      "total_count": 45,
+      "total_count": 82,
       "files": [
         {
           "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
-          "count": 45,
+          "count": 82,
           "part": 1
         }
       ]
@@ -444,12 +444,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-checked.txt",
       "friendly_name": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi",
-      "total_count": 15,
+      "total_count": 34,
       "files": [
         {
           "filename": "raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
           "filepath": "configs/raw_githubusercontent_com_Kirillo4ka_eavevpn-confi.html",
-          "count": 15,
+          "count": 34,
           "part": 1
         }
       ]
@@ -476,7 +476,7 @@
     {
       "source_url": "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
       "friendly_name": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r",
-      "total_count": 352,
+      "total_count": 438,
       "files": [
         {
           "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part1.html",
@@ -487,8 +487,14 @@
         {
           "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.html",
           "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part2.html",
-          "count": 152,
+          "count": 200,
           "part": 2
+        },
+        {
+          "filename": "raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part3.html",
+          "filepath": "configs/raw_githubusercontent_com_AirLinkVPN1_AirLinkVPN_r_part3.html",
+          "count": 38,
+          "part": 3
         }
       ]
     },
@@ -534,12 +540,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/dequar/deqwl/refs/heads/main/deray.txt",
       "friendly_name": "raw_githubusercontent_com_dequar_deqwl_refs_heads_",
-      "total_count": 38,
+      "total_count": 57,
       "files": [
         {
           "filename": "raw_githubusercontent_com_dequar_deqwl_refs_heads_.html",
           "filepath": "configs/raw_githubusercontent_com_dequar_deqwl_refs_heads_.html",
-          "count": 38,
+          "count": 57,
           "part": 1
         }
       ]
@@ -547,7 +553,7 @@
     {
       "source_url": "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/LimeVPN.txt",
       "friendly_name": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head",
-      "total_count": 756,
+      "total_count": 782,
       "files": [
         {
           "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part1.html",
@@ -570,7 +576,7 @@
         {
           "filename": "raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.html",
           "filepath": "configs/raw_githubusercontent_com_LimeHi_LimeVPN_refs_head_part4.html",
-          "count": 156,
+          "count": 182,
           "part": 4
         }
       ]
@@ -617,12 +623,12 @@
     {
       "source_url": "https://gitverse.ru/api/repos/272/wl/raw/branch/master/whitelist",
       "friendly_name": "gitverse_ru_api_repos_272_wl_raw_branch_master_whi",
-      "total_count": 22,
+      "total_count": 25,
       "files": [
         {
           "filename": "gitverse_ru_api_repos_272_wl_raw_branch_master_whi.html",
           "filepath": "configs/gitverse_ru_api_repos_272_wl_raw_branch_master_whi.html",
-          "count": 22,
+          "count": 25,
           "part": 1
         }
       ]
@@ -630,12 +636,12 @@
     {
       "source_url": "https://vpn.akres.fun/bwl",
       "friendly_name": "vpn_akres_fun_bwl",
-      "total_count": 50,
+      "total_count": 83,
       "files": [
         {
           "filename": "vpn_akres_fun_bwl.html",
           "filepath": "configs/vpn_akres_fun_bwl.html",
-          "count": 50,
+          "count": 83,
           "part": 1
         }
       ]
@@ -695,13 +701,19 @@
     {
       "source_url": "https://raw.githubusercontent.com/prominbro/sub/refs/heads/main/212.txt",
       "friendly_name": "raw_githubusercontent_com_prominbro_sub_refs_heads",
-      "total_count": 48,
+      "total_count": 287,
       "files": [
         {
-          "filename": "raw_githubusercontent_com_prominbro_sub_refs_heads.html",
-          "filepath": "configs/raw_githubusercontent_com_prominbro_sub_refs_heads.html",
-          "count": 48,
+          "filename": "raw_githubusercontent_com_prominbro_sub_refs_heads_part1.html",
+          "filepath": "configs/raw_githubusercontent_com_prominbro_sub_refs_heads_part1.html",
+          "count": 200,
           "part": 1
+        },
+        {
+          "filename": "raw_githubusercontent_com_prominbro_sub_refs_heads_part2.html",
+          "filepath": "configs/raw_githubusercontent_com_prominbro_sub_refs_heads_part2.html",
+          "count": 87,
+          "part": 2
         }
       ]
     },
@@ -1042,12 +1054,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt",
       "friendly_name": "raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa",
-      "total_count": 14,
+      "total_count": 36,
       "files": [
         {
           "filename": "raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.html",
           "filepath": "configs/raw_githubusercontent_com_ksenkovsolo_HardVPN-bypa.html",
-          "count": 14,
+          "count": 36,
           "part": 1
         }
       ]
