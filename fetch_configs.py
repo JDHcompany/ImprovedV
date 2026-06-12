@@ -22,10 +22,11 @@ TG_CHANNEL_LINK = "https://t.me/your_telegram_channel"
 LINKS_FILE = "links.txt"
 OUTPUT_DIR = "configs"
 BEST_LINKS_FILE = "best_files_links.txt"
+MANIFEST_FILE = os.path.join(OUTPUT_DIR, "manifest.json")
 MAX_CONFIGS_PER_FILE = 200
-TCP_TIMEOUT = 1.5  # Уменьшили таймаут для ускорения проверки огромных списков
-MAX_THREADS = 150   # Увеличили количество потоков до 150 для мгновенного пинга
-LIMIT_TEST_CONFIGS = 1500 # Максимальное количество конфигов для теста (чтобы не зависать на 30 000+ адресах)
+TCP_TIMEOUT = 1.5  # Таймаут для проверки связи
+MAX_THREADS = 150   # 150 параллельных потоков
+LIMIT_TEST_CONFIGS = 1500 # Лимит проверяемых прокси для экономии времени
 
 def decode_base64(data):
     """Безопасно декодирует строку из Base64."""
@@ -57,7 +58,7 @@ def parse_configs(content):
         lines = [line.strip() for line in decoded_content.split('\n') if line.strip()]
         configs = [line for line in lines if any(line.startswith(p + "://") for p in protocols)]
         
-    return list(set(configs)) # Удаляем дубликаты сразу
+    return list(set(configs))
 
 def sanitize_filename(name):
     """Создает безопасное имя файла из URL-адреса источника."""
@@ -92,7 +93,7 @@ def rename_config(config, new_name):
         return config
 
 def extract_host_port(config):
-    """Извлекает IP/домен и порт из конфигурации для TCP-проверки."""
+    """Извлекает IP/домен и порт из конфигурации."""
     try:
         schemeless = re.sub(r'^[a-zA-Z0-9]+://', '', config)
         
@@ -147,8 +148,6 @@ def check_all_configs_parallel(all_configs):
     """Выполняет ультрабыструю многопоточную проверку связи по TCP."""
     total_count = len(all_configs)
     
-    # Защита от зависаний при 30 000+ конфигах:
-    # Мы берем случайную выборку из 1500 штук для поиска лучших рабочих
     if total_count > LIMIT_TEST_CONFIGS:
         print(f"База слишком большая ({total_count} шт). Выбираем случайные {LIMIT_TEST_CONFIGS} для быстрого TCP-теста...")
         configs_to_test = random.sample(all_configs, LIMIT_TEST_CONFIGS)
@@ -208,6 +207,7 @@ def fetch_and_save():
         return
 
     all_gathered_configs = []
+    manifest_sources = [] # Список для сохранения структуры файлов в JSON
 
     # 1. Скачивание конфигов
     for index, link in enumerate(links, start=1):
@@ -236,6 +236,7 @@ def fetch_and_save():
 
         # Сохраняем все сырые файлы частями по 200 штук
         part = 1
+        source_files = []
         for i in range(0, total_configs, MAX_CONFIGS_PER_FILE):
             chunk = configs[i:i + MAX_CONFIGS_PER_FILE]
             filename = f"{base_name}.txt" if total_configs <= MAX_CONFIGS_PER_FILE else f"{base_name}_part{part}.txt"
@@ -244,41 +245,76 @@ def fetch_and_save():
             file_content = generate_file_content(chunk, start_index=1)
             with open(filepath, 'w', encoding='utf-8') as out_file:
                 out_file.write(file_content)
+                
+            source_files.append({
+                "filename": filename,
+                "filepath": f"configs/{filename}",
+                "count": len(chunk),
+                "part": part
+            })
             part += 1
+            
+        manifest_sources.append({
+            "source_url": link,
+            "friendly_name": base_name,
+            "total_count": total_configs,
+            "files": source_files
+        })
 
     unique_gathered_configs = list(set(all_gathered_configs))
     print(f"\nВсего уникальных для проверки: {len(unique_gathered_configs)}")
 
-    if not unique_gathered_configs:
-        return
-
-    # 2. Быстрая проверка лучших по TCP
-    best_sorted_configs = check_all_configs_parallel(unique_gathered_configs)
-
-    if not best_sorted_configs:
-        print("Нет рабочих прокси.")
-        return
-
-    # 3. Сохранение лучших файлов
     best_file_paths = []
+    best_manifest_files = []
+
+    if unique_gathered_configs:
+        # 2. Быстрая проверка лучших по TCP
+        best_sorted_configs = check_all_configs_parallel(unique_gathered_configs)
+
+        if best_sorted_configs:
+            # Файл 1: Топ 1-200 лучших
+            best_1_chunk = best_sorted_configs[0:MAX_CONFIGS_PER_FILE]
+            if best_1_chunk:
+                path_1 = os.path.join(OUTPUT_DIR, "best_1.txt")
+                file_content_1 = generate_file_content(best_1_chunk, start_index=1)
+                with open(path_1, 'w', encoding='utf-8') as f:
+                    f.write(file_content_1)
+                best_file_paths.append(path_1)
+                best_manifest_files.append({
+                    "name": "🔥 Лучшие прокси — Часть 1 (Топ 1-200)",
+                    "filepath": "configs/best_1.txt",
+                    "count": len(best_1_chunk),
+                    "description": "Самые быстрые серверы с наименьшей задержкой отклика по результатам TCP-теста."
+                })
+
+            # Файл 2: Топ 201-400 лучших
+            best_2_chunk = best_sorted_configs[MAX_CONFIGS_PER_FILE:MAX_CONFIGS_PER_FILE * 2]
+            if best_2_chunk:
+                path_2 = os.path.join(OUTPUT_DIR, "best_2.txt")
+                file_content_2 = generate_file_content(best_2_chunk, start_index=201)
+                with open(path_2, 'w', encoding='utf-8') as f:
+                    f.write(file_content_2)
+                best_file_paths.append(path_2)
+                best_manifest_files.append({
+                    "name": "⚡ Резервные прокси — Часть 2 (Топ 201-400)",
+                    "filepath": "configs/best_2.txt",
+                    "count": len(best_2_chunk),
+                    "description": "Надежный дополнительный пул проверенных прокси-серверов."
+                })
+
+    # Записываем манифест JSON для веб-сайта
+    manifest_data = {
+        "last_updated": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
+        "telegram": TG_CHANNEL_LINK,
+        "best_files": best_manifest_files,
+        "sources": manifest_sources
+    }
     
-    best_1_chunk = best_sorted_configs[0:MAX_CONFIGS_PER_FILE]
-    if best_1_chunk:
-        path_1 = os.path.join(OUTPUT_DIR, "best_1.txt")
-        file_content_1 = generate_file_content(best_1_chunk, start_index=1)
-        with open(path_1, 'w', encoding='utf-8') as f:
-            f.write(file_content_1)
-        best_file_paths.append(path_1)
+    with open(MANIFEST_FILE, 'w', encoding='utf-8') as mf:
+        json.dump(manifest_data, mf, ensure_ascii=False, indent=2)
+    print(f"Манифест сохранен в {MANIFEST_FILE}")
 
-    best_2_chunk = best_sorted_configs[MAX_CONFIGS_PER_FILE:MAX_CONFIGS_PER_FILE * 2]
-    if best_2_chunk:
-        path_2 = os.path.join(OUTPUT_DIR, "best_2.txt")
-        file_content_2 = generate_file_content(best_2_chunk, start_index=201)
-        with open(path_2, 'w', encoding='utf-8') as f:
-            f.write(file_content_2)
-        best_file_paths.append(path_2)
-
-    # 4. Ссылки на файлы
+    # 4. Запись текстовых ссылок на лучшие файлы (для обратной совместимости)
     github_repository = os.environ.get("GITHUB_REPOSITORY", "USER/REPO")
     raw_url_base = f"https://raw.githubusercontent.com/{github_repository}/main"
     
