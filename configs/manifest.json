@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13 16:06:07 UTC",
+  "last_updated": "2026-06-13 20:58:39 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -303,12 +303,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
       "friendly_name": "white-sni-ru-all",
-      "total_count": 9,
+      "total_count": 21,
       "files": [
         {
           "filename": "white-sni-ru-all.html",
           "filepath": "configs/white-sni-ru-all.html",
-          "count": 9,
+          "count": 21,
           "part": 1
         }
       ]
@@ -316,12 +316,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt",
       "friendly_name": "white-cidr-ru-all",
-      "total_count": 44,
+      "total_count": 60,
       "files": [
         {
           "filename": "white-cidr-ru-all.html",
           "filepath": "configs/white-cidr-ru-all.html",
-          "count": 44,
+          "count": 60,
           "part": 1
         }
       ]
@@ -329,12 +329,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "friendly_name": "vless-reality-white-lists-rus-",
-      "total_count": 44,
+      "total_count": 60,
       "files": [
         {
           "filename": "vless-reality-white-lists-rus-.html",
           "filepath": "configs/vless-reality-white-lists-rus-.html",
-          "count": 44,
+          "count": 60,
           "part": 1
         }
       ]
@@ -342,12 +342,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
       "friendly_name": "white-cidr-ru-checked",
-      "total_count": 7,
+      "total_count": 21,
       "files": [
         {
           "filename": "white-cidr-ru-checked.html",
           "filepath": "configs/white-cidr-ru-checked.html",
-          "count": 7,
+          "count": 21,
           "part": 1
         }
       ]
@@ -392,12 +392,12 @@
     {
       "source_url": "https://subrostunnel.vercel.app/gen.txt",
       "friendly_name": "gen",
-      "total_count": 29,
+      "total_count": 172,
       "files": [
         {
           "filename": "gen.html",
           "filepath": "configs/gen.html",
-          "count": 29,
+          "count": 172,
           "part": 1
         }
       ]
@@ -418,12 +418,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-all.txt",
       "friendly_name": "white-cidr-ru-all",
-      "total_count": 28,
+      "total_count": 58,
       "files": [
         {
           "filename": "white-cidr-ru-all.html",
           "filepath": "configs/white-cidr-ru-all.html",
-          "count": 28,
+          "count": 58,
           "part": 1
         }
       ]
@@ -431,12 +431,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "friendly_name": "vless-reality-white-lists-rus-",
-      "total_count": 26,
+      "total_count": 58,
       "files": [
         {
           "filename": "vless-reality-white-lists-rus-.html",
           "filepath": "configs/vless-reality-white-lists-rus-.html",
-          "count": 26,
+          "count": 58,
           "part": 1
         }
       ]
@@ -444,12 +444,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-checked.txt",
       "friendly_name": "white-cidr-ru-checked",
-      "total_count": 11,
+      "total_count": 22,
       "files": [
         {
           "filename": "white-cidr-ru-checked.html",
           "filepath": "configs/white-cidr-ru-checked.html",
-          "count": 11,
+          "count": 22,
           "part": 1
         }
       ]
@@ -476,7 +476,7 @@
     {
       "source_url": "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
       "friendly_name": "rkn_white_list",
-      "total_count": 291,
+      "total_count": 354,
       "files": [
         {
           "filename": "rkn_white_list_part1.html",
@@ -487,7 +487,7 @@
         {
           "filename": "rkn_white_list_part2.html",
           "filepath": "configs/rkn_white_list_part2.html",
-          "count": 91,
+          "count": 154,
           "part": 2
         }
       ]
@@ -495,12 +495,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta7.txt",
       "friendly_name": "kizyakbeta7",
-      "total_count": 52,
+      "total_count": 164,
       "files": [
         {
           "filename": "kizyakbeta7.html",
           "filepath": "configs/kizyakbeta7.html",
-          "count": 52,
+          "count": 164,
           "part": 1
         }
       ]
@@ -508,12 +508,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta6.txt",
       "friendly_name": "kizyakbeta6",
-      "total_count": 48,
+      "total_count": 73,
       "files": [
         {
           "filename": "kizyakbeta6.html",
           "filepath": "configs/kizyakbeta6.html",
-          "count": 48,
+          "count": 73,
           "part": 1
         }
       ]
@@ -521,12 +521,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyaktestru.txt",
       "friendly_name": "kizyaktestru",
-      "total_count": 39,
+      "total_count": 55,
       "files": [
         {
           "filename": "kizyaktestru.html",
           "filepath": "configs/kizyaktestru.html",
-          "count": 39,
+          "count": 55,
           "part": 1
         }
       ]
@@ -534,12 +534,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/dequar/deqwl/refs/heads/main/deray.txt",
       "friendly_name": "deray",
-      "total_count": 14,
+      "total_count": 44,
       "files": [
         {
           "filename": "deray.html",
           "filepath": "configs/deray.html",
-          "count": 14,
+          "count": 44,
           "part": 1
         }
       ]
@@ -547,7 +547,7 @@
     {
       "source_url": "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/LimeVPN.txt",
       "friendly_name": "limevpn",
-      "total_count": 839,
+      "total_count": 828,
       "files": [
         {
           "filename": "limevpn_part1.html",
@@ -576,7 +576,7 @@
         {
           "filename": "limevpn_part5.html",
           "filepath": "configs/limevpn_part5.html",
-          "count": 39,
+          "count": 28,
           "part": 5
         }
       ]
@@ -623,12 +623,12 @@
     {
       "source_url": "https://gitverse.ru/api/repos/272/wl/raw/branch/master/whitelist",
       "friendly_name": "whitelist",
-      "total_count": 22,
+      "total_count": 28,
       "files": [
         {
           "filename": "whitelist.html",
           "filepath": "configs/whitelist.html",
-          "count": 22,
+          "count": 28,
           "part": 1
         }
       ]
@@ -636,12 +636,12 @@
     {
       "source_url": "https://vpn.akres.fun/bwl",
       "friendly_name": "bwl",
-      "total_count": 160,
+      "total_count": 140,
       "files": [
         {
           "filename": "bwl.html",
           "filepath": "configs/bwl.html",
-          "count": 160,
+          "count": 140,
           "part": 1
         }
       ]
@@ -1054,12 +1054,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt",
       "friendly_name": "1sub",
-      "total_count": 12,
+      "total_count": 49,
       "files": [
         {
           "filename": "1sub.html",
           "filepath": "configs/1sub.html",
-          "count": 12,
+          "count": 49,
           "part": 1
         }
       ]
