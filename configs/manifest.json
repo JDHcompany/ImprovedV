@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13 05:51:04 UTC",
+  "last_updated": "2026-06-13 06:12:42 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -635,12 +635,12 @@
     {
       "source_url": "https://gitverse.ru/api/repos/272/wl/raw/branch/master/whitelist",
       "friendly_name": "whitelist",
-      "total_count": 29,
+      "total_count": 26,
       "files": [
         {
           "filename": "whitelist.html",
           "filepath": "configs/whitelist.html",
-          "count": 29,
+          "count": 26,
           "part": 1
         }
       ]
@@ -648,12 +648,12 @@
     {
       "source_url": "https://vpn.akres.fun/bwl",
       "friendly_name": "bwl",
-      "total_count": 83,
+      "total_count": 68,
       "files": [
         {
           "filename": "bwl.html",
           "filepath": "configs/bwl.html",
-          "count": 83,
+          "count": 68,
           "part": 1
         }
       ]
