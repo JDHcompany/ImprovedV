@@ -9,7 +9,7 @@
     <!-- Иконки Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0f19;
@@ -146,7 +146,6 @@
         const repoUrl = `https://github.com/${username}/${repoName}`;
         
         // Автоматически строим URL-адрес GitHub Pages на основе текущего местоположения.
-        // Это предотвратит проблему открытия сырого raw-текста в браузере!
         const loc = window.location;
         const pagesBaseUrl = loc.protocol + '//' + loc.host + loc.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
 
@@ -227,21 +226,44 @@
 
             manifestData.sources.forEach((source, sourceIdx) => {
                 source.files.forEach(file => {
+                    // Очистка имени для поиска и отображения
                     const cleanFriendlyName = source.friendly_name.replace(/_/g, '.').replace('com.', 'com - ');
                     const isMatched = cleanFriendlyName.toLowerCase().includes(searchLower) || file.filename.toLowerCase().includes(searchLower);
                     if (!isMatched && filterText !== '') return;
 
                     filesFound++;
+
+                    // --- КРАСИВОЕ ДИНАМИЧЕСКОЕ ИМЕНОВАНИЕ ФАЙЛА ---
+                    // Убираем расширение .html
+                    let displayFileName = file.filename.replace(/\.html$/, '');
+                    
+                    // Ищем паттерны вида _part1, -part3 и т.д. чтобы вырезать их для чистого заголовка
+                    const partMatch = displayFileName.match(/_part(\d+)/i) || displayFileName.match(/-part(\d+)/i);
+                    if (partMatch) {
+                        displayFileName = displayFileName.replace(/_part\d+/i, '').replace(/-part\d+/i, '');
+                    }
+                    
+                    // Заменяем символы подчеркивания на удобные точки или дефисы для красоты
+                    displayFileName = displayFileName.replace(/_/g, '.');
+
+                    // Если файл разбит на части (или есть пометка части), добавляем номер в заголовок
+                    if (source.files.length > 1 || file.part > 1) {
+                        displayFileName += ` #${file.part}`;
+                    }
+                    // ----------------------------------------------
+
                     const card = document.createElement('div');
                     card.className = "card-blur p-5 rounded-2xl border border-gray-800 hover:border-amber-500/10 transition duration-200 flex flex-col justify-between";
                     card.innerHTML = `
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <span class="text-[11px] font-bold px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-md">
-                                    Часть ${file.part} • ${file.count} шт
+                                    ${source.files.length > 1 ? `Часть ${file.part}` : 'Полный'} • ${file.count} шт
                                 </span>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-2">🍟 Improved-potato</h4>
+                            <h4 class="text-base font-bold text-white mb-1 truncate" title="${displayFileName}">
+                                🍟 ${displayFileName}
+                            </h4>
                             <p class="text-gray-500 text-xs truncate mb-4" title="${source.source_url}">
                                 Источник: ${cleanFriendlyName}
                             </p>
@@ -250,7 +272,7 @@
                             <button onclick="copyRawLink('${file.filepath}')" class="flex items-center justify-center gap-1.5 bg-gray-900 hover:bg-amber-500 hover:text-black text-gray-300 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs">
                                 <i data-lucide="copy" class="w-3.5 h-3.5"></i> Ссылка
                             </button>
-                            <button onclick="downloadFile('${file.filepath}', 'improved-potato-part${file.part}.html')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
+                            <button onclick="downloadFile('${file.filepath}', '${file.filename}')" class="flex items-center justify-center gap-1.5 bg-gray-950 hover:bg-gray-800 text-gray-400 font-medium py-2 px-3 rounded-lg transition duration-150 text-xs border border-gray-800">
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Скачать
                             </button>
                         </div>
