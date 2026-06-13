@@ -90,3 +90,4 @@ http://144.31.165.198:8080/premium
 https://raw.githubusercontent.com/KiryaScript/white-lists/refs/heads/main/subscribe.txt
 https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt
 http://127.0.0.1:8166/url=https%3A%2F%2Fsub.pagervpn.ru%2FA3BKECZVkHjr3AQh&hwid=http%3A%2F%2F127.0.0.1%3A8166%2Furl%3Dhttps%253A%252F%252Fkey.prosve&ua=Happ%2F3.23.0
+http://127.0.0.1:8166/url=https%3A%2F%2Fpage2.anotherboring.top%2F61M2SPBrYVp2Q8-x&hwid=&ua=Happ%2F3.23.0
