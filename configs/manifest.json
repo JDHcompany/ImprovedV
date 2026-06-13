@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13 06:37:02 UTC",
+  "last_updated": "2026-06-13 06:49:25 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -1044,6 +1044,19 @@
       ]
     },
     {
+      "source_url": "https://github.com/kama55726/KomaryServers/blob/main/White-List-2",
+      "friendly_name": "white-list-2",
+      "total_count": 12,
+      "files": [
+        {
+          "filename": "white-list-2.html",
+          "filepath": "configs/white-list-2.html",
+          "count": 12,
+          "part": 1
+        }
+      ]
+    },
+    {
       "source_url": "http://144.31.165.198:8080/premium",
       "friendly_name": "premium",
       "total_count": 16,
@@ -1065,6 +1078,45 @@
           "filename": "1sub.html",
           "filepath": "configs/1sub.html",
           "count": 64,
+          "part": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/1.txt",
+      "friendly_name": "improvedv_1",
+      "total_count": 86,
+      "files": [
+        {
+          "filename": "improvedv_1.html",
+          "filepath": "configs/improvedv_1.html",
+          "count": 86,
+          "part": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/5154091303",
+      "friendly_name": "5154091303",
+      "total_count": 1,
+      "files": [
+        {
+          "filename": "5154091303.html",
+          "filepath": "configs/5154091303.html",
+          "count": 1,
+          "part": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/2.txt",
+      "friendly_name": "improvedv_2",
+      "total_count": 16,
+      "files": [
+        {
+          "filename": "improvedv_2.html",
+          "filepath": "configs/improvedv_2.html",
+          "count": 16,
           "part": 1
         }
       ]
