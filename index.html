@@ -66,7 +66,7 @@
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
                     <i data-lucide="search" class="w-5 h-5"></i>
                 </div>
-                <input type="text" id="search-input" oninput="filterFiles()" placeholder="Поиск по домену или источнику..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900/60 border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 transition duration-200 card-blur">
+                <input type="text" id="search-input" oninput="filterFiles()" placeholder="Поиск по файлу или названию..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900/60 border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 transition duration-200 card-blur">
             </div>
         </section>
 
@@ -226,9 +226,8 @@
 
             manifestData.sources.forEach((source, sourceIdx) => {
                 source.files.forEach(file => {
-                    // Очистка имени для поиска и отображения
-                    const cleanFriendlyName = source.friendly_name.replace(/_/g, '.').replace('com.', 'com - ');
-                    const isMatched = cleanFriendlyName.toLowerCase().includes(searchLower) || file.filename.toLowerCase().includes(searchLower);
+                    // Проверка соответствия поисковому запросу по имени файла
+                    const isMatched = file.filename.toLowerCase().includes(searchLower);
                     if (!isMatched && filterText !== '') return;
 
                     filesFound++;
@@ -237,16 +236,16 @@
                     // Убираем расширение .html
                     let displayFileName = file.filename.replace(/\.html$/, '');
                     
-                    // Ищем паттерны вида _part1, -part3 и т.д. чтобы вырезать их для чистого заголовка
+                    // Ищем паттерны вида _part1, -part3 и т.д. чтобы вырезать их для чистого заголовка карточки
                     const partMatch = displayFileName.match(/_part(\d+)/i) || displayFileName.match(/-part(\d+)/i);
                     if (partMatch) {
                         displayFileName = displayFileName.replace(/_part\d+/i, '').replace(/-part\d+/i, '');
                     }
                     
-                    // Заменяем символы подчеркивания на удобные точки или дефисы для красоты
+                    // Заменяем символы подчеркивания на удобные точки для красоты
                     displayFileName = displayFileName.replace(/_/g, '.');
 
-                    // Если файл разбит на части (или есть пометка части), добавляем номер в заголовок
+                    // Если файл разбит на части, добавляем номер в заголовок карточки
                     if (source.files.length > 1 || file.part > 1) {
                         displayFileName += ` #${file.part}`;
                     }
@@ -264,8 +263,8 @@
                             <h4 class="text-base font-bold text-white mb-1 truncate" title="${displayFileName}">
                                 🍟 ${displayFileName}
                             </h4>
-                            <p class="text-gray-500 text-xs truncate mb-4" title="${source.source_url}">
-                                Источник: ${cleanFriendlyName}
+                            <p class="text-gray-500 text-xs truncate mb-4" title="${file.filename}">
+                                Источник: ${file.filename}
                             </p>
                         </div>
                         <div class="grid grid-cols-2 gap-2">
