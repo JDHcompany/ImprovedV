@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13 06:12:42 UTC",
+  "last_updated": "2026-06-13 06:37:02 UTC",
   "telegram": "https://t.me/freevpnconf_bot",
   "best_files": [
     {
@@ -303,12 +303,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
       "friendly_name": "white-sni-ru-all",
-      "total_count": 13,
+      "total_count": 12,
       "files": [
         {
           "filename": "white-sni-ru-all.html",
           "filepath": "configs/white-sni-ru-all.html",
-          "count": 13,
+          "count": 12,
           "part": 1
         }
       ]
@@ -316,12 +316,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt",
       "friendly_name": "white-cidr-ru-all",
-      "total_count": 103,
+      "total_count": 104,
       "files": [
         {
           "filename": "white-cidr-ru-all.html",
           "filepath": "configs/white-cidr-ru-all.html",
-          "count": 103,
+          "count": 104,
           "part": 1
         }
       ]
@@ -329,12 +329,12 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "friendly_name": "vless-reality-white-lists-rus-",
-      "total_count": 103,
+      "total_count": 104,
       "files": [
         {
           "filename": "vless-reality-white-lists-rus-.html",
           "filepath": "configs/vless-reality-white-lists-rus-.html",
-          "count": 103,
+          "count": 104,
           "part": 1
         }
       ]
@@ -342,48 +342,48 @@
     {
       "source_url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
       "friendly_name": "white-cidr-ru-checked",
-      "total_count": 38,
+      "total_count": 64,
       "files": [
         {
           "filename": "white-cidr-ru-checked.html",
           "filepath": "configs/white-cidr-ru-checked.html",
-          "count": 38,
+          "count": 64,
           "part": 1
         }
       ]
     },
     {
       "source_url": "https://subrostunnel.vercel.app/wl.txt",
-      "friendly_name": "wl",
+      "friendly_name": "subrostunnel_vercel_app_wl",
       "total_count": 963,
       "files": [
         {
-          "filename": "wl_part1.html",
-          "filepath": "configs/wl_part1.html",
+          "filename": "subrostunnel_vercel_app_wl_part1.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_part1.html",
           "count": 200,
           "part": 1
         },
         {
-          "filename": "wl_part2.html",
-          "filepath": "configs/wl_part2.html",
+          "filename": "subrostunnel_vercel_app_wl_part2.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_part2.html",
           "count": 200,
           "part": 2
         },
         {
-          "filename": "wl_part3.html",
-          "filepath": "configs/wl_part3.html",
+          "filename": "subrostunnel_vercel_app_wl_part3.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_part3.html",
           "count": 200,
           "part": 3
         },
         {
-          "filename": "wl_part4.html",
-          "filepath": "configs/wl_part4.html",
+          "filename": "subrostunnel_vercel_app_wl_part4.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_part4.html",
           "count": 200,
           "part": 4
         },
         {
-          "filename": "wl_part5.html",
-          "filepath": "configs/wl_part5.html",
+          "filename": "subrostunnel_vercel_app_wl_part5.html",
+          "filepath": "configs/subrostunnel_vercel_app_wl_part5.html",
           "count": 163,
           "part": 5
         }
@@ -392,13 +392,19 @@
     {
       "source_url": "https://subrostunnel.vercel.app/gen.txt",
       "friendly_name": "gen",
-      "total_count": 126,
+      "total_count": 230,
       "files": [
         {
-          "filename": "gen.html",
-          "filepath": "configs/gen.html",
-          "count": 126,
+          "filename": "gen_part1.html",
+          "filepath": "configs/gen_part1.html",
+          "count": 200,
           "part": 1
+        },
+        {
+          "filename": "gen_part2.html",
+          "filepath": "configs/gen_part2.html",
+          "count": 30,
+          "part": 2
         }
       ]
     },
@@ -476,7 +482,7 @@
     {
       "source_url": "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
       "friendly_name": "rkn_white_list",
-      "total_count": 406,
+      "total_count": 444,
       "files": [
         {
           "filename": "rkn_white_list_part1.html",
@@ -493,7 +499,7 @@
         {
           "filename": "rkn_white_list_part3.html",
           "filepath": "configs/rkn_white_list_part3.html",
-          "count": 6,
+          "count": 44,
           "part": 3
         }
       ]
@@ -1033,19 +1039,6 @@
           "filename": "whitelist.html",
           "filepath": "configs/whitelist.html",
           "count": 141,
-          "part": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://github.com/kama55726/KomaryServers/blob/main/White-List-2",
-      "friendly_name": "white-list-2",
-      "total_count": 12,
-      "files": [
-        {
-          "filename": "white-list-2.html",
-          "filepath": "configs/white-list-2.html",
-          "count": 12,
           "part": 1
         }
       ]
