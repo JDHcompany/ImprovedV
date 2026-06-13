@@ -90,4 +90,5 @@ http://144.31.165.198:8080/premium
 https://raw.githubusercontent.com/KiryaScript/white-lists/refs/heads/main/subscribe.txt
 https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt
 https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/1.txt
-
+https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/5154091303
+https://raw.githubusercontent.com/JDHcompany/ImprovedV/refs/heads/main/2.txt
