@@ -10,6 +10,7 @@ import urllib.parse
 import base64
 import time
 import random
+import ssl
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.error import URLError, HTTPError
 
@@ -28,9 +29,16 @@ TCP_TIMEOUT = 1.5  # Таймаут для проверки связи
 MAX_THREADS = 150   # 150 параллельных потоков
 LIMIT_TEST_CONFIGS = 1500 # Лимит проверяемых прокси для экономии времени
 
+# Игнорируем ошибки SSL-сертификатов у некоторых проблемных провайдеров
+ssl_context = ssl._create_unverified_context()
+
 def decode_base64(data):
-    """Безопасно декодирует строку из Base64."""
-    cleaned_data = data.strip().replace("\n", "").replace("\r", "")
+    """
+    Безопасно декодирует строку из Base64 (включая urlsafe-варианты и неправильный паддинг).
+    """
+    cleaned_data = data.strip().replace("\n", "").replace("\r", "").replace(" ", "")
+    cleaned_data = cleaned_data.replace('-', '+').replace('_', '/')
+    
     missing_padding = len(cleaned_data) % 4
     if missing_padding:
         cleaned_data += '=' * (4 - missing_padding)
@@ -60,82 +68,170 @@ def parse_configs(content):
         
     return list(set(configs))
 
+def extract_real_url_and_headers(link):
+    """
+    Анализирует входящую ссылку. Если она ведет на локальный прокси (127.0.0.1)
+    с вложенным url=..., извлекает реальный внешний URL-адрес подписки
+    и вытаскивает параметр ua=..., чтобы использовать его в качестве User-Agent.
+    """
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    target_url = link
+
+    try:
+        parsed_raw = urllib.parse.urlparse(link)
+        if "url=" in link or parsed_raw.netloc == "127.0.0.1" or "localhost" in parsed_raw.netloc:
+            params = urllib.parse.parse_qs(parsed_raw.query)
+            if 'url' in params and params['url']:
+                target_url = params['url'][0]
+                print(f"-> Распакован оригинальный URL: {target_url}")
+            if 'ua' in params and params['ua']:
+                headers['User-Agent'] = params['ua'][0]
+                print(f"-> Применен User-Agent провайдера: {headers['User-Agent']}")
+    except Exception as e:
+        print(f"Ошибка при разборе вложенной ссылки {link}: {e}")
+
+    return target_url, headers
+
 def sanitize_filename(url):
     """
     Создает ОЧЕНЬ КРАТКОЕ, красивое и безопасное имя файла из URL-адреса источника.
-    Например:
-      - https://raw.githubusercontent.com/user/repo/main/vless.txt -> vless
-      - https://example.com/sub/configs.txt -> configs
-      - https://domain.com/path/ -> domain_com
     """
     try:
-        # Убираем параметры запроса (?param=val) и хэши
-        clean_url = url.split('?')[0].split('#')[0]
-        
-        # Парсим URL
+        target_url = url
+        if "url=" in url:
+            parsed_raw = urllib.parse.urlparse(url)
+            params = urllib.parse.parse_qs(parsed_raw.query)
+            if 'url' in params and params['url']:
+                target_url = params['url'][0]
+
+        clean_url = target_url.split('?')[0].split('#')[0]
         parsed = urllib.parse.urlparse(clean_url)
         path = parsed.path.strip('/')
         
-        # 1. Если это файл на GitHub (raw.githubusercontent.com)
         if "githubusercontent.com" in parsed.netloc and path:
             parts = path.split('/')
-            # Обычно структура: user/repo/branch/path/to/file.txt
-            # Пытаемся взять имя самого файла (последний элемент) без расширения
             if len(parts) >= 4:
                 filename = parts[-1]
                 name_without_ext = os.path.splitext(filename)[0]
-                # Если имя файла слишком короткое или техническое, добавим имя репозитория
                 if len(name_without_ext) <= 3 or name_without_ext.lower() in ['main', 'master', 'release', 'index', 'config']:
                     name_without_ext = f"{parts[1]}_{name_without_ext}"
                 name = name_without_ext
             else:
                 name = "github_" + parts[-1]
-        
-        # 2. Если это обычный файл на любом другом домене
         elif path:
             filename = path.split('/')[-1]
             name_without_ext = os.path.splitext(filename)[0]
-            if name_without_ext:
+            if name_without_ext and len(name_without_ext) > 2:
                 name = name_without_ext
             else:
-                name = parsed.netloc.replace('.', '_')
-        
-        # 3. Если путь пустой (просто ссылка на домен, например https://example.com/)
+                name = parsed.netloc.replace('.', '_') + "_" + name_without_ext
         else:
             name = parsed.netloc.replace('www.', '').replace('.', '_')
             
-        # Убираем все лишние символы, заменяя на нижнее подчеркивание
         name = re.sub(r'[^a-zA-Z0-9_\-]', '_', name)
-        # Очищаем от дублирующихся подчеркиваний
         name = re.sub(r'_+', '_', name).strip('_')
         
-        # Если в итоге имя пустое, генерируем случайное короткое имя
         if not name:
             name = "source_" + str(random.randint(100, 999))
             
-        return name.lower()[:30] # Ограничиваем длину до 30 символов
+        return name.lower()[:30]
     except Exception:
-        # В случае любой непредвиденной ошибки делаем простой безопасный хэш-вариант
         return "config_" + str(abs(hash(url)) % 10000)
 
-def rename_config(config, new_name):
-    """Переименовывает имя соединения в конфигурации."""
+def extract_flag_or_geo(name):
+    """
+    Пытается извлечь из оригинального имени прокси флаг-эмодзи,
+    двухбуквенный маркер страны (например [NL], (DE)) или название локации.
+    """
+    if not name:
+        return ""
+    
+    # 1. Поиск эмодзи флагов (диапазон региональных индикаторов Unicode)
+    # Региональные индикаторы Unicode находятся в диапазоне U+1F1E6 - U+1F1FF
+    flags = re.findall(r'[\U0001F1E6-\U0001F1FF]{2}', name)
+    if flags:
+        return " " + "".join(flags)
+        
+    # 2. Поиск стандартных квадратных скобок с кодом страны, например [DE], [US], [NL], [RU], [FR], [GB], [UA]
+    geo_bracket = re.search(r'\[([A-Z]{2})\]', name)
+    if geo_bracket:
+        return f" [{geo_bracket.group(1)}]"
+        
+    # 3. Поиск круглых скобок с кодом страны, например (DE), (US)
+    geo_paren = re.search(r'\(([A-Z]{2})\)', name)
+    if geo_paren:
+        return f" [{geo_paren.group(1)}]"
+        
+    # 4. Поиск ключевых слов популярных локаций
+    locations = {
+        "germany": "🇩🇪", "de": "🇩🇪", "deutschland": "🇩🇪",
+        "united states": "🇺🇸", "usa": "🇺🇸", "us": "🇺🇸",
+        "netherlands": "🇳🇱", "nl": "🇳🇱", "holland": "🇳🇱",
+        "russia": "🇷🇺", "ru": "🇷🇺",
+        "singapore": "🇸🇬", "sg": "🇸🇬",
+        "finland": "🇫🇮", "fi": "🇫🇮",
+        "france": "🇫🇷", "fr": "🇫🇷",
+        "united kingdom": "🇬🇧", "uk": "🇬🇧", "gb": "🇬🇧",
+        "ukraine": "🇺🇦", "ua": "🇺🇦",
+        "turkey": "🇹🇷", "tr": "🇹🇷",
+        "sweden": "🇸🇪", "se": "🇸🇪",
+        "poland": "🇵🇱", "pl": "🇵🇱",
+        "japan": "🇯🇵", "jp": "🇯🇵",
+        "hong kong": "🇭🇰", "hk": "🇭🇰"
+    }
+    
+    name_lower = name.lower()
+    # Ищем упоминания локаций отдельными токенами
+    for loc, replacement in locations.items():
+        if re.search(r'\b' + re.escape(loc) + r'\b', name_lower):
+            return " " + replacement
+            
+    return ""
+
+def rename_config(config, new_base_name):
+    """
+    Переименовывает имя соединения в конфигурации, бережно сохраняя
+    оригинальный флаг или геолокационную метку прокси-сервера.
+    """
     try:
+        original_name = ""
+        
+        # Шаг 1: Извлекаем оригинальное имя в зависимости от протокола
         if config.lower().startswith('vmess://'):
             schemeless = config[8:]
             decoded = decode_base64(schemeless)
             try:
                 data = json.loads(decoded)
-                data['ps'] = new_name
+                original_name = data.get('ps', '')
+            except Exception:
+                pass
+        else:
+            if '#' in config:
+                # В ссылках vless, ss, trojan имя передается после '#'
+                original_name = urllib.parse.unquote(config.split('#')[-1])
+
+        # Шаг 2: Извлекаем флаг или локацию из оригинального имени
+        geo_tag = extract_flag_or_geo(original_name)
+        final_name = f"{new_base_name}{geo_tag}"
+
+        # Шаг 3: Пересобираем конфигурацию с новым именем
+        if config.lower().startswith('vmess://'):
+            schemeless = config[8:]
+            decoded = decode_base64(schemeless)
+            try:
+                data = json.loads(decoded)
+                data['ps'] = final_name
                 encoded_json = json.dumps(data)
                 return f"vmess://{encode_base64(encoded_json)}"
             except Exception:
                 if '"ps"' in decoded:
-                    new_decoded = re.sub(r'"ps"\s*:\s*"[^"]*"', f'"ps": "{new_name}"', decoded)
+                    new_decoded = re.sub(r'"ps"\s*:\s*"[^"]*"', f'"ps": "{final_name}"', decoded)
                     return f"vmess://{encode_base64(new_decoded)}"
                 return config
 
-        encoded_name = urllib.parse.quote(new_name)
+        encoded_name = urllib.parse.quote(final_name)
         if '#' in config:
             base_url = config.split('#')[0]
             return f"{base_url}#{encoded_name}"
@@ -362,23 +458,25 @@ def fetch_and_save():
 
     # 1. Скачивание конфигов
     for index, link in enumerate(links, start=1):
-        print(f"[{index}/{len(links)}] Скачивание: {link}")
+        print(f"[{index}/{len(links)}] Анализ ссылки: {link}")
+        
+        real_url, request_headers = extract_real_url_and_headers(link)
         base_name = sanitize_filename(link)
         
         try:
             req = urllib.request.Request(
-                link, 
-                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+                real_url, 
+                headers=request_headers
             )
-            with urllib.request.urlopen(req, timeout=15) as response:
+            with urllib.request.urlopen(req, timeout=25, context=ssl_context) as response:
                 content = response.read().decode('utf-8', errors='ignore')
         except Exception as e:
-            print(f"Ошибка при загрузке {link}: {e}")
+            print(f"Ошибка при загрузке {real_url}: {e}")
             continue
 
         configs = parse_configs(content)
         total_configs = len(configs)
-        print(f"Найдено: {total_configs}")
+        print(f"Найдено прокси: {total_configs}")
         
         if total_configs == 0:
             continue
