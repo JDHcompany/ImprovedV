@@ -60,11 +60,63 @@ def parse_configs(content):
         
     return list(set(configs))
 
-def sanitize_filename(name):
-    """Создает безопасное имя файла из URL-адреса источника."""
-    name = re.sub(r'https?://', '', name)
-    name = re.sub(r'[^a-zA-Z0-9_\-]', '_', name)
-    return name[:50]
+def sanitize_filename(url):
+    """
+    Создает ОЧЕНЬ КРАТКОЕ, красивое и безопасное имя файла из URL-адреса источника.
+    Например:
+      - https://raw.githubusercontent.com/user/repo/main/vless.txt -> vless
+      - https://example.com/sub/configs.txt -> configs
+      - https://domain.com/path/ -> domain_com
+    """
+    try:
+        # Убираем параметры запроса (?param=val) и хэши
+        clean_url = url.split('?')[0].split('#')[0]
+        
+        # Парсим URL
+        parsed = urllib.parse.urlparse(clean_url)
+        path = parsed.path.strip('/')
+        
+        # 1. Если это файл на GitHub (raw.githubusercontent.com)
+        if "githubusercontent.com" in parsed.netloc and path:
+            parts = path.split('/')
+            # Обычно структура: user/repo/branch/path/to/file.txt
+            # Пытаемся взять имя самого файла (последний элемент) без расширения
+            if len(parts) >= 4:
+                filename = parts[-1]
+                name_without_ext = os.path.splitext(filename)[0]
+                # Если имя файла слишком короткое или техническое, добавим имя репозитория
+                if len(name_without_ext) <= 3 or name_without_ext.lower() in ['main', 'master', 'release', 'index', 'config']:
+                    name_without_ext = f"{parts[1]}_{name_without_ext}"
+                name = name_without_ext
+            else:
+                name = "github_" + parts[-1]
+        
+        # 2. Если это обычный файл на любом другом домене
+        elif path:
+            filename = path.split('/')[-1]
+            name_without_ext = os.path.splitext(filename)[0]
+            if name_without_ext:
+                name = name_without_ext
+            else:
+                name = parsed.netloc.replace('.', '_')
+        
+        # 3. Если путь пустой (просто ссылка на домен, например https://example.com/)
+        else:
+            name = parsed.netloc.replace('www.', '').replace('.', '_')
+            
+        # Убираем все лишние символы, заменяя на нижнее подчеркивание
+        name = re.sub(r'[^a-zA-Z0-9_\-]', '_', name)
+        # Очищаем от дублирующихся подчеркиваний
+        name = re.sub(r'_+', '_', name).strip('_')
+        
+        # Если в итоге имя пустое, генерируем случайное короткое имя
+        if not name:
+            name = "source_" + str(random.randint(100, 999))
+            
+        return name.lower()[:30] # Ограничиваем длину до 30 символов
+    except Exception:
+        # В случае любой непредвиденной ошибки делаем простой безопасный хэш-вариант
+        return "config_" + str(abs(hash(url)) % 10000)
 
 def rename_config(config, new_name):
     """Переименовывает имя соединения в конфигурации."""
